@@ -19,8 +19,20 @@ import {
   userData,
   usesCases,
   teamMembers,
+  avatars,
 } from "@/data";
 import Chart from "@/components/Chart";
+import AvatarIcon from "@/components/AvatarIcon";
+import ProfileCard from "@/components/ProfileCard";
+
+const getPosition = (index) => {
+  const positions = [
+    "top-60 left-16",
+    "top-1/2 right-20 transform -translate-y-1/2",
+    "bottom-32 left-48",
+  ];
+  return positions[index];
+};
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,6 +41,7 @@ const Home = () => {
     Array(features.length).fill(0)
   );
   const [showImages, setShowImages] = useState(false);
+  const [activeCard, setActiveCard] = useState(0);
 
   const totalSlides = Math.ceil(usesCases.length / slidesPerView);
 
@@ -76,6 +89,14 @@ const Home = () => {
     }, 2000);
 
     return () => clearTimeout(initialTimer);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % avatars.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -182,71 +203,30 @@ const Home = () => {
           {/* Right Content - Updated to match design */}
           <div className="relative w-1/2 hidden md:block">
             {/* Blue curved background */}
-            <div className="absolute top-[-100px] right-0 w-full h-screen ">
+            <div className="absolute top-[-100px] right-0 w-full h-screen">
               <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full">
-                {/* Top Avatar with Sunglasses */}
-                <div className="absolute top-60 left-16">
-                  <div className="w-20 h-20 bg-white rounded-full p-1">
-                    <div className="w-full h-full bg-blue-100 rounded-full overflow-hidden flex items-center justify-center">
-                      <Image
-                        src="/icon1.png"
-                        alt="Business avatar"
-                        width={50}
-                        height={50}
-                        className="w-16 h-16 object-cover"
-                      />
+                {avatars.map((avatar, index) => (
+                  <div
+                    key={avatar.id}
+                    className={`absolute ${getPosition(
+                      index
+                    )} transition-all duration-700 ease-in-out`}
+                  >
+                    <div
+                      className={`transition-transform duration-700 transform ${
+                        activeCard === index
+                          ? "scale-100 opacity-100"
+                          : "scale-85"
+                      }`}
+                    >
+                      {activeCard === index ? (
+                        <ProfileCard {...avatar} />
+                      ) : (
+                        <AvatarIcon image={avatar.image} />
+                      )}
                     </div>
                   </div>
-                </div>
-
-                {/* Profile Card */}
-                <div className="absolute top-1/2 right-20 transform -translate-y-1/2 bg-white rounded-xl p-4 w-64 shadow-lg">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Image
-                      src="/icon3.png"
-                      alt="Business avatar"
-                      width={50}
-                      height={50}
-                      className="w-16 h-16 object-cover"
-                    />
-                  </div>{" "}
-                  <div className="mb-3 text-center">
-                    <span className=" text-black text-sm font-bold">50%</span>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Gender:</span>
-                      <span className="font-medium">Male</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Age:</span>
-                      <span className="font-medium">30-40 years</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Profession:</span>
-                      <span className="font-medium">Lawyer</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Hobbies:</span>
-                      <span className="font-medium">Reading, yoga</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Avatar */}
-                <div className="absolute bottom-32 left-48">
-                  <div className="w-20 h-20 bg-white rounded-full p-1">
-                    <div className="w-full h-full bg-blue-100 rounded-full overflow-hidden flex items-center justify-center">
-                      <Image
-                        src="/icon2.png"
-                        alt="Business avatar"
-                        width={50}
-                        height={50}
-                        className="w-16 h-16 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -255,6 +235,7 @@ const Home = () => {
           <ProfileCarousel data={userData} />
         </div>
       </section>
+
       {/* Features Section */}
       <section className="py-20 md:py-40 flex flex-col items-center">
         <div className="space-y-1 text-center">

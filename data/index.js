@@ -122,3 +122,33 @@ export const process = [
     text: "Lectus lobortis diam at pellentesque urna sed. Viverra in nec nulla orci blandit cursus maecenas nam. Orci amet augue egestas nunc enim. Parturient amet nunc ipsum interdum mi.",
   },
 ];
+
+export const avatars = [
+  {
+    id: 0,
+    image: "/icon1.png",
+    percentage: "60%",
+    gender: "Female",
+    age: "25-35 years",
+    profession: "Designer",
+    hobbies: "Painting, Music",
+  },
+  {
+    id: 1,
+    image: "/icon3.png",
+    percentage: "50%",
+    gender: "Male",
+    age: "30-40 years",
+    profession: "Lawyer",
+    hobbies: "Reading, Yoga",
+  },
+  {
+    id: 2,
+    image: "/icon2.png",
+    percentage: "70%",
+    gender: "Male",
+    age: "40-50 years",
+    profession: "Engineer",
+    hobbies: "Cycling, Chess",
+  },
+];
