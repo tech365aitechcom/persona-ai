@@ -741,13 +741,12 @@ const Home = () => {
         </div>
 
         {/* Team Members */}
-        <div className="max-w-7xl mx-auto space-y-16 relative">
+        {/* <div className="max-w-7xl mx-auto space-y-16 relative">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
               className={`relative ${index % 2 === 0 ? "pr-96" : "pl-96"}`}
             >
-              {/* Background Decorative Shape */}
               <svg
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
@@ -760,9 +759,7 @@ const Home = () => {
                 />
               </svg>
 
-              {/* Content Card */}
               <div className="bg-white rounded-3xl shadow-sm p-8 relative flex flex-col md:flex-row gap-8">
-                {/* Text Content */}
                 <div className={`flex-1 ${index % 2 === 1 && "order-2"}`}>
                   <p className="text-gray-600 mb-2">{member.role}</p>
                   <h3 className="text-2xl font-bold text-blue-900 mb-4">
@@ -782,7 +779,6 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Profile Image */}
                 <div
                   className={`${
                     index % 2 === 0
@@ -801,7 +797,7 @@ const Home = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className="w-full flex justify-center items-center absolute left-0 bottom-[-80px]">
           <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 py-8 px-8 flex flex-wrap items-center gap-4">
             <h2 className="text-white font-bold text-lg md:text-2xl flex-1">
