@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Cell, Pie, PieChart } from "recharts";
 import {
   FileText,
   ArrowRight,
@@ -13,56 +12,23 @@ import {
   Facebook,
 } from "lucide-react";
 import ProfileCarousel from "@/components/ProfileCarousel";
+import {
+  chartData,
+  features,
+  process,
+  userData,
+  usesCases,
+  teamMembers,
+} from "@/data";
+import Chart from "@/components/Chart";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(2);
-  const usesCases = [
-    {
-      icon: "🏥",
-      title: "Healthcare",
-      description:
-        "Egestas ut et duis felis elementum dictumst aliquet. Volutpat eros pharetra amet integer neque. Vitae sed nulla tempor gravida pretium cursus et viverra eget. Ornare dolor quis tortor nunc odio. In odio et lacus tristique at. In sit in.",
-    },
-    {
-      icon: "🏪",
-      title: "Consumer goods",
-      description:
-        "Enim in id pellentesque leo lacus elit ut lorem arcu. In fames netus praesent odio faucibus non turpis at. Mi malesuada donec ullamcorper feugiat. At sed fermentum egestas mauris sit purus nullam. Elit feugiat nisl suspendisse eget suscipit mattis.",
-    },
-    {
-      icon: "👑",
-      title: "Entertainment",
-      description:
-        "Sed a in auctor nibh etiam neque tristique. Viverra proin nec volutpat cursus adipiscing scelerisque varius elementum a. Donec sed velit etiam pretium quis consectetur orci ullamcorper bibendum. Sed eget facilisi tristique nunc viverra phasellus et sit.",
-    },
-    {
-      icon: "🏥",
-      title: "Healthcare 2",
-      description: "Additional healthcare use case description goes here...",
-    },
-    {
-      icon: "🏪",
-      title: "Consumer goods 2",
-      description:
-        "Additional consumer goods use case description goes here...",
-    },
-  ];
-
-  useEffect(() => {
-    const updateSlidesPerView = () => {
-      if (window.innerWidth < 640) {
-        setSlidesPerView(1); // Small screens: 1 slide
-      } else {
-        setSlidesPerView(2); // Larger screens: 3 slides
-      }
-    };
-
-    updateSlidesPerView();
-    window.addEventListener("resize", updateSlidesPerView);
-
-    return () => window.removeEventListener("resize", updateSlidesPerView);
-  }, []);
+  const [imageIndexes, setImageIndexes] = useState(
+    Array(features.length).fill(0)
+  );
+  const [showImages, setShowImages] = useState(false);
 
   const totalSlides = Math.ceil(usesCases.length / slidesPerView);
 
@@ -79,58 +45,38 @@ const Home = () => {
     return usesCases.slice(startIndex, startIndex + slidesPerView);
   };
 
-  const chartData = [
-    { name: "Circulating Supply", value: 72, color: "#58AFFF" },
-    { name: "Seed Round", value: 15, color: "#00214D" },
-    { name: "Team Allocation", value: 8, color: "#FFD700" },
-    { name: "Hiring/Community", value: 5, color: "#00D4D4" },
-  ];
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth < 640) {
+        setSlidesPerView(1); // Small screens: 1 slide
+      } else {
+        setSlidesPerView(2); // Larger screens: 3 slides
+      }
+    };
 
-  const userData = [
-    {
-      percentage: "50%",
-      gender: "Male",
-      age: "30-40 years",
-      profession: "Lawyer",
-      hobbies: "Reading, yoga",
-      icon: "/icon1.png",
-    },
-    {
-      percentage: "65%",
-      gender: "Female",
-      age: "25-35 years",
-      profession: "Designer",
-      hobbies: "Painting, hiking",
-      icon: "/icon2.png",
-    },
-    {
-      percentage: "75%",
-      gender: "Male",
-      age: "40-50 years",
-      profession: "Engineer",
-      hobbies: "Cycling, chess",
-      icon: "/icon3.png",
-    },
-  ];
+    updateSlidesPerView();
+    window.addEventListener("resize", updateSlidesPerView);
 
-  const teamMembers = [
-    {
-      role: "Founder",
-      name: "Scott Johnson",
-      bio: "Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.",
-      currentWork:
-        "Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.",
-      imageUrl: "/api/placeholder/400/400",
-    },
-    {
-      role: "Chief Research Strategist",
-      name: "Michaelyn Williams",
-      bio: "Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.",
-      currentWork:
-        "Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.",
-      imageUrl: "/api/placeholder/400/400",
-    },
-  ];
+    return () => window.removeEventListener("resize", updateSlidesPerView);
+  }, []);
+
+  useEffect(() => {
+    // Show images after 5 seconds
+    const initialTimer = setTimeout(() => {
+      setShowImages(true);
+
+      // Start rotating images every 5 seconds
+      const interval = setInterval(() => {
+        setImageIndexes((prevIndexes) =>
+          prevIndexes.map((index, i) => (index + 1) % features[i].images.length)
+        );
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }, 2000);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -325,30 +271,20 @@ const Home = () => {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 px-4">
-          {[
-            {
-              title: "Market Validation",
-              text: "Test product concepts through virtual focus groups with AI avatars representing target customers",
-            },
-            {
-              title: "Roleplaying Scenarios",
-              text: "Practice sales pitches, presentations, and negotiations in a risk-free environment",
-            },
-            {
-              title: "Customer Insights",
-              text: "Use PersonaAI to explore customer preferences, identifying trends and opportunities for product improvement",
-            },
-            {
-              title: "Employee Training",
-              text: "Leverage AI avatars for role-playing and training scenarios, enhancing team skills in customer service and sales",
-            },
-          ].map((feature, index) => (
+          {features.map((feature, index) => (
             <div
               key={index}
               className="space-y-4 text-center md:max-w-sm mx-auto"
             >
               <div className="bg-blue-50 w-36 h-36 mx-auto rounded-2xl flex items-center justify-center">
-                <Image src="/target 1.png" width={90} height={90} alt="icon" />
+                {showImages ? (
+                  <Image
+                    src={feature.images[imageIndexes[index]]}
+                    width={90}
+                    height={90}
+                    alt={`Feature ${index + 1}`}
+                  />
+                ) : null}
               </div>
               <h3 className="font-semibold text-lg md:text-xl">
                 {feature.title}
@@ -371,23 +307,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 relative">
           {" "}
           {/* Added relative for positioning */}
-          {[
-            {
-              title: "Onboarding",
-              img: "/icon1.png",
-              text: "Metus neque donec vulputate ac id vel nisl. Mus auctor et sit pharetra urna. Consequat ut commodo pretium nunc in nibh lacinia purus. Tristique et mattis nisl amet cursus scelerisque.",
-            },
-            {
-              title: "Avatar Creation",
-              img: "/icon2.png",
-              text: "Aliquam dignissim dignissim nisl aliquam. Urna feugiat cras eget magna congue nunc viverra. Fringilla facilisis etiam elit dictum eget eu etiam et parturient. Ac sit faucibus lorem tellus sed.",
-            },
-            {
-              title: "Insights delivery",
-              img: "/icon3.png",
-              text: "Lectus lobortis diam at pellentesque urna sed. Viverra in nec nulla orci blandit cursus maecenas nam. Orci amet augue egestas nunc enim. Parturient amet nunc ipsum interdum mi.",
-            },
-          ].map((feature, index) => (
+          {process.map((feature, index) => (
             <div
               key={index}
               className="space-y-4 text-center md:max-w-sm mx-auto relative"
@@ -459,21 +379,7 @@ const Home = () => {
 
           {/* Center: Donut Chart */}
           <div className="w-full md:w-1/3 flex justify-center">
-            <PieChart width={350} height={350}>
-              <Pie
-                data={chartData}
-                cx="50%"
-                cy="50%"
-                innerRadius={80}
-                outerRadius={140}
-                dataKey="value"
-                paddingAngle={2}
-              >
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-            </PieChart>
+            <Chart />
           </div>
 
           {/* Right Side: Description */}
