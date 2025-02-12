@@ -24,6 +24,7 @@ import {
 import Chart from "@/components/Chart";
 import AvatarIcon from "@/components/AvatarIcon";
 import ProfileCard from "@/components/ProfileCard";
+import Testimonial from "@/components/Testimonial";
 
 const getPosition = (index) => {
   const positions = [
@@ -618,74 +619,27 @@ const Home = () => {
         </div>
       </section>
 
-      <section className=" w-full bg-blue-50 min-h-screen py-16 px-4 relative">
-        {/* Header */}
-        <div className="max-w-7xl mx-auto mb-16">
-          <p className="text-blue-400 text-center mb-2">Some Subtitle</p>
-          <h2 className="text-4xl font-bold text-blue-900 text-center">
-            Meet the <span className="bg-yellow-300 px-2">Team</span>
-          </h2>
-        </div>
+      <section className=" w-full bg-blue-50 min-h-screen relative">
+        <Testimonial />
+        <div className="w-full hidden md:flex justify-center items-center absolute left-0 bottom-[-80px]">
+          <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 py-8 px-8 flex flex-wrap items-center gap-4">
+            <h2 className="text-white font-bold text-lg md:text-2xl flex-1">
+              Stay Updated on the Future <br /> of Market Research
+            </h2>
+            <div className="flex flex-wrap md:flex-nowrap gap-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="outline-none text-gray-700 placeholder-gray-500 px-6 py-2 md:py-3 w-full md:w-96 rounded-full"
+              />
 
-        {/* Team Members */}
-        {/* <div className="max-w-7xl mx-auto space-y-16 relative">
-          {teamMembers.map((member, index) => (
-            <div
-              key={member.name}
-              className={`relative ${index % 2 === 0 ? "pr-96" : "pl-96"}`}
-            >
-              <svg
-                viewBox="0 0 200 200"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-[400px] w-[400px]"
-              >
-                <path
-                  fill="#86EBF5"
-                  d="M52.1,-33C67.1,-22.7,78.7,-1,72.4,12.5C66.1,26,41.9,31.5,20.3,41.6C-1.3,51.8,-20.3,66.8,-38.3,64.1C-56.2,61.3,-73.1,40.9,-75.2,20.4C-77.3,-0.1,-64.5,-20.7,-49.5,-30.9C-34.5,-41.2,-17.3,-41.1,0.6,-41.6C18.5,-42.2,37.1,-43.2,52.1,-33Z"
-                  transform="translate(100 100)"
-                />
-              </svg>
-
-              <div className="bg-white rounded-3xl shadow-sm p-8 relative flex flex-col md:flex-row gap-8">
-                <div className={`flex-1 ${index % 2 === 1 && "order-2"}`}>
-                  <p className="text-gray-600 mb-2">{member.role}</p>
-                  <h3 className="text-2xl font-bold text-blue-900 mb-4">
-                    {member.name}
-                  </h3>
-                  <div className="space-y-4">
-                    <p className="text-gray-600">{member.bio}</p>
-                    <p className="text-gray-600">{member.currentWork}</p>
-                  </div>
-                  <div className="flex gap-4 mt-6">
-                    <a href="#" className="text-blue-900 hover:text-blue-700">
-                      <Linkedin className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-blue-900 hover:text-blue-700">
-                      <Facebook className="w-6 h-6" />
-                    </a>
-                  </div>
-                </div>
-
-                <div
-                  className={`${
-                    index % 2 === 0
-                      ? "md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2"
-                      : "md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2"
-                  }`}
-                >
-                  <div className="w-64 h-64 rounded-full overflow-hidden">
-                    <img
-                      src={member.imageUrl}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full rounded-full py-2">
+                Subscribe <span className="ml-2">➜</span>
+              </button>
             </div>
-          ))}
-        </div> */}
-        <div className="w-full flex justify-center items-center absolute left-0 bottom-[-80px]">
+          </div>
+        </div>
+        <div className="w-full flex md:hidden justify-center items-center ">
           <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 py-8 px-8 flex flex-wrap items-center gap-4">
             <h2 className="text-white font-bold text-lg md:text-2xl flex-1">
               Stay Updated on the Future <br /> of Market Research
