@@ -287,8 +287,13 @@ const Home = () => {
               key={index}
               className="space-y-4 text-center md:max-w-sm mx-auto relative"
             >
-              <div className="bg-blue-50 w-36 h-36 mx-auto rounded-full flex items-center justify-center relative z-10">
-                <Image src={feature.img} width={70} height={70} alt="icon" />
+              <div className="w-full flex items-center">
+                <div className="bg-blue-50 w-36 h-36 mx-auto rounded-full flex items-center justify-center relative z-10">
+                  <div className="absolute top-2 left-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900 font-bold">
+                    {index + 1}
+                  </div>{" "}
+                  <Image src={feature.img} width={70} height={70} alt="icon" />
+                </div>
               </div>
               <h3 className="font-semibold text-lg md:text-xl">
                 {feature.title}
