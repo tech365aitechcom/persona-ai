@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#333333] text-gray-300 pt-36 pb-16 px-4 text-center">
+    <footer className="bg-[#333333] text-gray-300 pt-16 md:pt-36 pb-16 px-4 text-center">
       {/* Logo & Branding */}
       <div className="flex flex-col gap-6 items-center">
         <img src="/logo.png" alt="Persona AI Logo" className="w-16 h-16" />

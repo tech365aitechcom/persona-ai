@@ -9,16 +9,21 @@ const Testimonial = () => {
       <DecorativeShape className="-top-40 -left-20 rotate-45" />
       <DecorativeShape className="-bottom-60 -right-40 rotate-12" />
 
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-blue-300 text-lg mb-3">Some Subtitle</p>
-          <h1 className="text-5xl font-bold text-blue-900">
-            Meet the <span className="text-yellow-400">Team</span>
-          </h1>
+      <div className="max-w-7xl mx-auto space-y-7">
+        <div className="space-y-1 text-center">
+          <span className="text-sky-400 font-medium">Some Subtitle</span>
+          <h2 className="text-5xl font-bold text-heading">
+            <span className="relative">
+              <span className="relative z-10">Meet our</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10"></span>
+            </span>
+            <span className="ml-2 relative z-10">Team</span>
+          </h2>
         </div>
         <div className="space-y-12">
-          {teamMembers.map((item) => (
+          {teamMembers.map((item, index) => (
             <TeamMember
+              key={index}
               role={item.role}
               name={item.name}
               bio={item.bio}

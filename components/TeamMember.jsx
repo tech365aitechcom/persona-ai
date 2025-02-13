@@ -16,8 +16,8 @@ const TeamMember = ({ role, name, bio, imageSrc, imagePosition = "right" }) => {
             </h2>
           </div>
           <div className="flex gap-4">
-            <Linkedin />
-            <Facebook />
+            <Linkedin className="text-sky-400" />
+            <Facebook className="text-blue-900" />
           </div>
         </div>
         <p className="text-gray-700 leading-relaxed mb-6">{bio}</p>
