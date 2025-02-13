@@ -1,13 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import {
-  FileText,
-  ArrowRight,
-  Zap,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { FileText, ArrowRight, Zap, ArrowLeft } from "lucide-react";
 import ProfileCarousel from "@/components/ProfileCarousel";
 import {
   chartData,
@@ -35,7 +29,7 @@ const getPosition = (index) => {
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(2);
+  const [slidesPerView, setSlidesPerView] = useState(3);
   const [imageIndexes, setImageIndexes] = useState(
     Array(features.length).fill(0)
   );
@@ -62,7 +56,7 @@ const Home = () => {
       if (window.innerWidth < 640) {
         setSlidesPerView(1); // Small screens: 1 slide
       } else {
-        setSlidesPerView(2); // Larger screens: 3 slides
+        setSlidesPerView(3); // Larger screens: 3 slides
       }
     };
 
@@ -104,8 +98,14 @@ const Home = () => {
         {/* Header */}
         <header className="w-full absolute top-0 left-0 flex justify-between items-center px-6 py-4 z-50">
           <div className="flex items-center gap-2">
-            {/* <img src="/logo.png" alt="PersonaAI Logo" className="w-10 h-10" /> */}
-            <span className="text-xl md:text-2xl font-bold">
+            <Image
+              src="https://s3-alpha-sig.figma.com/img/99c3/6664/8abfa4838cbe2d98d3c96c9caa0fa6ba?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=JM2I8gLE1ctra9Xl9cUqKzgxqE9yyycZvadvyKP0Ppn9vWzG7cWx6-GnzfjDCZEYc-9dpJb3JwJpU2X8-KNpJpqJZm~Tds7ehbnixGb0EpLWZ3zH~sA6jjRvcXSVNPWCy12hXyoUFZkcN71AQ-EUxwflYsKUVZWJWODqOErGvf409ycNN9f-QsRMG11LOMJRGsi1Q-sWLXzGMHjgW4u1Z6BlhOEm7FqCc4xQZm4aFnW2lL5yhna3E9onaXsnWXGPs2DmTMkS8sBECVjnS-WKF5FWFfodUGXg8H9zDuQun4vyMG-QqmEeMyGOYQ7LPjgTkgSBiSfjlpoS87QLiYr7Kg__"
+              alt="PersonaAI Logo"
+              width={100}
+              height={100}
+              className="w-12 h-12"
+            />
+            <span className="text-2xl font-bold">
               Persona <span className="text-sky-400">AI*</span>
             </span>
           </div>
@@ -281,7 +281,6 @@ const Home = () => {
           <h2 className="text-5xl font-bold">How it works</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 relative">
-          {" "}
           {/* Added relative for positioning */}
           {process.map((feature, index) => (
             <div
@@ -289,7 +288,7 @@ const Home = () => {
               className="space-y-4 text-center md:max-w-sm mx-auto relative"
             >
               <div className="bg-blue-50 w-36 h-36 mx-auto rounded-full flex items-center justify-center relative z-10">
-                <Image src={feature.img} width={90} height={90} alt="icon" />
+                <Image src={feature.img} width={70} height={70} alt="icon" />
               </div>
               <h3 className="font-semibold text-lg md:text-xl">
                 {feature.title}
@@ -301,7 +300,7 @@ const Home = () => {
           ))}
         </div>
         {/* CTA Section */}
-        <div className="relative mt-12 text-center space-y-6">
+        <div className="relative mt-12 text-center space-y-6 z-40">
           <h3 className="text-5xl font-bold">Join us CTA title</h3>
           <button className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors">
             Explore the Platform
@@ -309,18 +308,32 @@ const Home = () => {
           </button>
         </div>
         {/* Bottom Left Circle */}
-        <div className="absolute bottom-2 left-2 w-96 h-9w-96 bg-[#1a94b9] rounded-full z-0"></div>
-        {/* Added z-index */}
+        <div className="absolute left-0 bottom-0">
+          <Image
+            src="/ellipse2.png"
+            alt="Ellipse"
+            width={400}
+            height={400}
+            className="hidden md:block"
+          />
+          <Image
+            src="/ellipse2.png"
+            alt="Ellipse"
+            width={250}
+            height={250}
+            className="md:hidden"
+          />
+        </div>
       </section>
 
       {/* Tokenomics Section */}
-      <section className="max-w-7xl py-40 mx-auto">
+      <section className="max-w-7xl py-10 md:py-40 mx-auto">
         <div className="space-y-1 pb-6 text-center">
           <p className="text-sky-400 uppercase text-sm tracking-wide">
             TOKENOMICS
           </p>
           <h2 className="text-5xl font-bold text-heading">
-            The{" "}
+            The
             <span className="relative">
               <span className="relative z-10">$PRSNA</span>
               <span className="absolute bottom-0 left-0 w-full rounded-full h-3 bg-yellow-300 -z-10"></span>
@@ -328,13 +341,10 @@ const Home = () => {
           </h2>
           <h2 className="text-5xl font-bold text-heading">Token Ecosystem</h2>
         </div>
-
-        {/* Token Distribution */}
-        <div className="flex flex-col md:flex-row items-center justify-between w-full p-8 bg-white">
-          {/* Left Side: Token Distribution */}
-          <div className="w-full md:w-1/3 text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full py-8 bg-white">
+          <div className="text-center md:text-left order-2 md:order-1">
             <h2 className="text-xl font-bold">Token Distribution</h2>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-4 flex items-center md:items-baseline justify-center flex-col">
               {chartData.map((item, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <span
@@ -347,32 +357,32 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 font-bold text-lg">
+            <p className="mb-5 py-2 md:mb-0 md:mt-12 font-normal leading-relaxed  md:text-xl text-left">
               Total Supply:
-              <br /> <span className="text-xl">1 billion tokens</span>
+              <span className="text-xl md:text-3xl font-bold">
+                1 billion tokens
+              </span>
             </p>
           </div>
-
-          {/* Center: Donut Chart */}
-          <div className="w-full md:w-1/3 flex justify-center">
+          <div className="flex justify-center order-1 md:order-2">
             <Chart />
           </div>
-
-          {/* Right Side: Description */}
-          <div className="w-full md:w-1/3 text-left">
-            <p className="text-gray-600">
+          <div className="w-full md:w-1/3 text-left flex flex-col gap-6 px-2 order-3">
+            <p className="text-gray-600 leading-relaxed">
               PersonaAI acknowledges the importance of ensuring token holders
               fully share in the platform’s success. PersonaAI’s tokenized
               economy is designed to incentivize participation, foster
               transparency, and ensure long-term growth.
             </p>
-            <p className="mt-4 font-bold text-black">
-              PersonaAI acknowledges the importance of ensuring token holders
-              fully share in the platform's success. We also know that token
-              price growth requires value to be represented in the token.
-            </p>
-            <button className="mt-6 px-6 py-2 border border-blue-500 text-blue-500 rounded-lg flex items-center space-x-2">
-              <span>📄</span>
+            <div className="border-l-4 border-yellow-300">
+              <p className="font-bold text-black mx-3">
+                PersonaAI acknowledges the importance of ensuring token holders
+                fully share in the platform's success. We also know that token
+                price growth requires value to be represented in the token.
+              </p>
+            </div>
+            <button className="w-fit mt-6 px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2">
+              <FileText className="text-sky-400" />
               <span>Download Litepaper</span>
             </button>
           </div>
@@ -380,7 +390,7 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="bg-heading text-white p-4 md:p-8 min-h-screen rounded-3xl">
+      <section className="bg-heading text-white p-4 md:p-8 min-h-screen rounded-3xl relative">
         {/* Header */}
         <div className="mb-12 text-center">
           <p className="text-blue-400 mb-2">Roadmap</p>
@@ -486,7 +496,7 @@ const Home = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="relative mt-12 text-center space-y-6">
+        <div className="relative pt-16 text-center space-y-6 pb-28">
           <h3 className="text-5xl font-bold">
             Be the first to
             <span className="relative">
@@ -499,6 +509,22 @@ const Home = () => {
             Explore the Platform
             <ArrowRight className="w-5 h-5" />
           </button>
+        </div>
+        <div className="absolute right-0 bottom-0">
+          <Image
+            src="/ellipse3.png"
+            alt="Ellipse"
+            width={200}
+            height={200}
+            className="hidden md:block"
+          />
+          <Image
+            src="/ellipse3.png"
+            alt="Ellipse"
+            width={100}
+            height={100}
+            className="md:hidden"
+          />
         </div>
       </section>
 
@@ -516,25 +542,29 @@ const Home = () => {
           <h2 className="text-5xl font-bold text-heading">use Persona AI</h2>
         </div>
         {/* Cards Container */}
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="flex gap-6 transition-all duration-300 ease-in-out">
-              {getVisibleCards().map((useCase, index) => (
-                <div
-                  key={index + currentSlide * slidesPerView}
-                  className={`flex-none bg-[#e0f9fd] rounded-xl p-6 mx-4 md:mx-0 shadow-sm 
-                     ${slidesPerView === 1 ? "w-full" : "w-1/2"}`}
-                >
-                  <div className="text-4xl mb-4">{useCase.icon}</div>
+        <div className="relative overflow-x-hidden">
+          <div className="flex gap-4 transition-all duration-300 ease-in-out">
+            {getVisibleCards().map((useCase, index) => (
+              <div
+                key={index + currentSlide * slidesPerView}
+                className={`flex-none bg-[#e0f9fd] rounded-xl p-6 mx-4 md:mx-0 shadow-sm 
+                            ${
+                              slidesPerView === 1
+                                ? "w-[calc(100%/1-28px)]"
+                                : "w-[calc(100%/3-16px)]"
+                            }`}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <Image src={useCase.icon} width={50} height={50} alt="icon" />
                   <h3 className="text-xl font-bold text-blue-900 mb-4">
                     {useCase.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {useCase.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+                </div>{" "}
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {useCase.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* Navigation & Progress Bar */}
@@ -545,7 +575,7 @@ const Home = () => {
               aria-label="Previous slide"
               disabled={currentSlide === 0}
             >
-              <ChevronLeft className="w-6 h-6 text-white" />
+              <ArrowLeft className="w-6 h-6 text-white" />
             </button>
 
             {/* Progress Bar */}
@@ -567,16 +597,23 @@ const Home = () => {
               aria-label="Next slide"
               disabled={totalSlides === currentSlide + 1}
             >
-              <ChevronRight className="w-6 h-6 text-white" />
+              <ArrowRight className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>
       </section>
 
-      <section className=" w-full bg-blue-50 min-h-screen relative">
+      <section className=" w-full bg-blue-50 min-h-screen relative rounded-3xl">
         <Testimonial />
-        <div className="w-full hidden md:flex justify-center items-center absolute left-0 bottom-[-80px]">
-          <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 py-8 px-8 flex flex-wrap items-center gap-4">
+        <div className="w-full hidden md:flex justify-center items-center absolute left-0 bottom-[-100px]">
+          <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 px-8 flex flex-wrap items-center gap-4">
+            <Image
+              src="/ellipse.png"
+              alt="PersonaAI Logo"
+              width={200}
+              height={200}
+              className="h-44"
+            />
             <h2 className="text-white font-bold text-lg md:text-2xl flex-1">
               Stay Updated on the Future <br /> of Market Research
             </h2>
@@ -587,8 +624,11 @@ const Home = () => {
                 className="outline-none text-gray-700 placeholder-gray-500 px-6 py-2 md:py-3 w-full md:w-96 rounded-full"
               />
 
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full rounded-full py-2">
-                Subscribe <span className="ml-2">➜</span>
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full flex gap-4 items-center justify-center rounded-full py-2">
+                Subscribe{" "}
+                <span className="ml-2">
+                  <ArrowRight className="w-5 h-5" />
+                </span>
               </button>
             </div>
           </div>
@@ -605,8 +645,11 @@ const Home = () => {
                 className="outline-none text-gray-700 placeholder-gray-500 px-6 py-3 md:py-3 w-full md:w-96 rounded-full"
               />
 
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full rounded-full py-3">
-                Subscribe <span className="ml-2">➜</span>
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full flex gap-4 items-center justify-center rounded-full py-2">
+                Subscribe{" "}
+                <span className="ml-2">
+                  <ArrowRight className="w-5 h-5" />
+                </span>
               </button>
             </div>
           </div>
