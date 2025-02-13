@@ -1,3 +1,5 @@
+import { CheckCircle } from "lucide-react";
+
 export const usesCases = [
   {
     icon: "🏥",
@@ -90,18 +92,22 @@ export const teamMembers = [
   {
     role: "Founder",
     name: "Scott Johnson",
+    imagePosition: "left",
     bio: "Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.",
     currentWork:
       "Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.",
-    imageUrl: "/api/placeholder/400/400",
+    imageUrl:
+      "https://s3-alpha-sig.figma.com/img/a742/bd65/6480dbc195adba8f5a0bbb0d0a283593?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=UNYgExrfZ4Iuwlp140J0QqBk~eVKi8dwE3tI1UUvsXBxWsq9Dnnro3YzYziwX1aKrCT90g3DG75myn3NhHmCja8CTTv-DFoUUj2-IfAG7vv3z0hO98MvDb~mxF7L00w8W-~WcwaTqxDAokeBqJ3cnUfIQ~hyZG1Gy1uqoRq6QR7JU8aJpv8C1dlc0y9fvr~vG1fLmonznRA8XKoaVnaxSvS5wSsW5bFOg3CeCotSPyJp1SQnq3L0jp1chtgE8R9A78Lt4XnR67WCpzGcDy4i1XJ9LKVa2Og4A~QFLv7cq3YMGdV3jn3OooQxD5ls2oGhSKneX4z5fB1k7t07QwKhNg__",
   },
   {
     role: "Chief Research Strategist",
     name: "Michaelyn Williams",
+    imagePosition: "right",
     bio: "Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.",
     currentWork:
       "Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.",
-    imageUrl: "/api/placeholder/400/400",
+    imageUrl:
+      "https://s3-alpha-sig.figma.com/img/bde2/b3bf/f91df4229e6929102d06b8679a16e2c4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GqtBNrz26FL4P96Pf6HRoD8eJ2~wL4RwIHn4mANuVcR66jSrj36KwTilQkVI3qOtO7YEZbrbD98LQ1MawUHr1nXbmoMmwlVlHLA5fzZx0ggGcscEcm8jPq5t034026AJF8k77isI~2uhxzdw1sdCfxPB6Tjhp3oOtHRMGXi9wfhqCEsfiWtXdfJ6N5EmdatwmwXGvUJN4H4wJTyCxoDCHiYLHJbpVU7hw6jKPwaB6CTVTPyANsOUEM3-uWEck0xx1RqG0n~vEdRbTNkhntJUbBQXSZ9WMKwZyrgmGcm2QGrDUXYc-K2sVayyEWT5Bjjk22B6~oVK0brf7n1PXVS7qg__",
   },
 ];
 
@@ -150,5 +156,46 @@ export const avatars = [
     age: "40-50 years",
     profession: "Engineer",
     hobbies: "Cycling, Chess",
+  },
+];
+
+export const timeline = [
+  {
+    icon: <CheckCircle className="w-5 h-5 text-blue-900" />,
+    bgColor: "bg-cyan-400",
+    title: "Refine tokenomics and finalize the website",
+    date: "January",
+  },
+  {
+    icon: <CheckCircle className="w-5 h-5 text-blue-900" />,
+    bgColor: "bg-cyan-400",
+    title: "Develop and demo the prototype",
+    date: "Early February",
+  },
+  {
+    number: "3",
+    title: "Conduct a skills gap assessment and hire for critical roles",
+    date: "March",
+  },
+  {
+    number: "4",
+    title: "Technology planning and decisions",
+    date: "April",
+  },
+  { number: "5", title: "Preliminary avatars", date: "April" },
+  {
+    number: "6",
+    title: "Sales and marketing strategy and planning",
+    date: "Early May",
+  },
+  {
+    number: "7",
+    title: "Develop partner relationships",
+    date: "Mid May",
+  },
+  {
+    number: "8",
+    title: "Organize community incentives",
+    date: "End of May",
   },
 ];

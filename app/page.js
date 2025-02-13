@@ -5,11 +5,8 @@ import {
   FileText,
   ArrowRight,
   Zap,
-  CheckCircle,
   ChevronLeft,
   ChevronRight,
-  Linkedin,
-  Facebook,
 } from "lucide-react";
 import ProfileCarousel from "@/components/ProfileCarousel";
 import {
@@ -18,18 +15,19 @@ import {
   process,
   userData,
   usesCases,
-  teamMembers,
   avatars,
+  timeline,
 } from "@/data";
 import Chart from "@/components/Chart";
 import AvatarIcon from "@/components/AvatarIcon";
 import ProfileCard from "@/components/ProfileCard";
 import Testimonial from "@/components/Testimonial";
+import { motion } from "framer-motion";
 
 const getPosition = (index) => {
   const positions = [
-    "top-60 left-16",
-    "top-1/2 right-20 transform -translate-y-1/2",
+    "top-60 left-2",
+    "top-1/2 right-10 transform -translate-y-1/2",
     "bottom-32 left-48",
   ];
   return positions[index];
@@ -104,14 +102,14 @@ const Home = () => {
     <div className="max-w-7xl mx-auto">
       <section className="relative">
         {/* Header */}
-        <header className="w-full absolute top-0 left-0 flex justify-between items-center px-8 py-4 z-50">
+        <header className="w-full absolute top-0 left-0 flex justify-between items-center px-6 py-4 z-50">
           <div className="flex items-center gap-2">
             {/* <img src="/logo.png" alt="PersonaAI Logo" className="w-10 h-10" /> */}
             <span className="text-xl md:text-2xl font-bold">
               Persona <span className="text-sky-400">AI*</span>
             </span>
           </div>
-          <div className="hidden md:flex justify-end items-center gap-8">
+          <div className="hidden md:flex justify-end items-center gap-4">
             <nav className="flex gap-8 text-white">
               <a href="#" className="hover:text-black">
                 Team
@@ -204,29 +202,25 @@ const Home = () => {
           {/* Right Content - Updated to match design */}
           <div className="relative w-1/2 hidden md:block">
             {/* Blue curved background */}
-            <div className="absolute top-[-100px] right-0 w-full h-screen">
-              <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full">
+            <div className="absolute top-[-80px] right-0 w-full h-screen">
+              <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full border-l-[30px] border-sky-200">
                 {avatars.map((avatar, index) => (
-                  <div
+                  <motion.div
                     key={avatar.id}
-                    className={`absolute ${getPosition(
-                      index
-                    )} transition-all duration-700 ease-in-out`}
+                    className={`absolute ${getPosition(index)}`}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{
+                      opacity: activeCard === index ? 1 : 1,
+                      scale: activeCard === index ? 0.9 : 1.1,
+                    }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
                   >
-                    <div
-                      className={`transition-transform duration-700 transform ${
-                        activeCard === index
-                          ? "scale-100 opacity-100"
-                          : "scale-85"
-                      }`}
-                    >
-                      {activeCard === index ? (
-                        <ProfileCard {...avatar} />
-                      ) : (
-                        <AvatarIcon image={avatar.image} />
-                      )}
-                    </div>
-                  </div>
+                    {activeCard === index ? (
+                      <ProfileCard {...avatar} />
+                    ) : (
+                      <AvatarIcon image={avatar.image} />
+                    )}
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -325,14 +319,14 @@ const Home = () => {
           <p className="text-sky-400 uppercase text-sm tracking-wide">
             TOKENOMICS
           </p>
-          <h2 className="text-3xl font-bold text-blue-900">
+          <h2 className="text-5xl font-bold text-heading">
             The{" "}
             <span className="relative">
               <span className="relative z-10">$PRSNA</span>
-              <span className="absolute bottom-0 left-0 w-full h-3 bg-yellow-300 -z-10"></span>
+              <span className="absolute bottom-0 left-0 w-full rounded-full h-3 bg-yellow-300 -z-10"></span>
             </span>
           </h2>
-          <h2 className="text-3xl font-bold text-blue-900">Token Ecosystem</h2>
+          <h2 className="text-5xl font-bold text-heading">Token Ecosystem</h2>
         </div>
 
         {/* Token Distribution */}
@@ -447,47 +441,7 @@ const Home = () => {
           </div>
           {/* Timeline Items */}
           <div className="space-y-8 mb-8 relative">
-            {[
-              {
-                icon: <CheckCircle className="w-5 h-5 text-blue-900" />,
-                bgColor: "bg-cyan-400",
-                title: "Refine tokenomics and finalize the website",
-                date: "January",
-              },
-              {
-                icon: <CheckCircle className="w-5 h-5 text-blue-900" />,
-                bgColor: "bg-cyan-400",
-                title: "Develop and demo the prototype",
-                date: "Early February",
-              },
-              {
-                number: "3",
-                title:
-                  "Conduct a skills gap assessment and hire for critical roles",
-                date: "March",
-              },
-              {
-                number: "4",
-                title: "Technology planning and decisions",
-                date: "April",
-              },
-              { number: "5", title: "Preliminary avatars", date: "April" },
-              {
-                number: "6",
-                title: "Sales and marketing strategy and planning",
-                date: "Early May",
-              },
-              {
-                number: "7",
-                title: "Develop partner relationships",
-                date: "Mid May",
-              },
-              {
-                number: "8",
-                title: "Organize community incentives",
-                date: "End of May",
-              },
-            ].map((item, index) => (
+            {timeline.map((item, index) => (
               <div key={index} className="flex gap-4 items-center relative">
                 {/* Circle */}
                 <div className="flex flex-col items-center relative">
@@ -640,18 +594,18 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full flex md:hidden justify-center items-center ">
-          <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 py-8 px-8 flex flex-wrap items-center gap-4">
-            <h2 className="text-white font-bold text-lg md:text-2xl flex-1">
+          <div className="w-full relative bg-heading md:rounded-full py-8 px-8 flex flex-wrap items-center gap-4">
+            <h2 className="text-white font-bold text-xl md:text-2xl flex-1">
               Stay Updated on the Future <br /> of Market Research
             </h2>
             <div className="flex flex-wrap md:flex-nowrap gap-6">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="outline-none text-gray-700 placeholder-gray-500 px-6 py-2 md:py-3 w-full md:w-96 rounded-full"
+                className="outline-none text-gray-700 placeholder-gray-500 px-6 py-3 md:py-3 w-full md:w-96 rounded-full"
               />
 
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full rounded-full py-2">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium w-full rounded-full py-3">
                 Subscribe <span className="ml-2">➜</span>
               </button>
             </div>
