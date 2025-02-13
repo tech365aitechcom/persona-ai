@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const ProfileCard = ({
   image,
@@ -8,10 +9,30 @@ const ProfileCard = ({
   age,
   profession,
   hobbies,
+  color,
 }) => {
+  const [faceUp, setFaceUp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFaceUp(true);
+    }, 10000); // Tilt after 10s
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="w-64 h-auto bg-white rounded-xl p-4 shadow-lg transition-transform duration-700 transform scale-y-100 opacity-100">
-      <div className="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+    <motion.div
+      className="w-64 h-auto bg-white rounded-xl p-4 shadow-lg"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{
+        scale: 1,
+        opacity: 1,
+        rotateX: faceUp ? 10 : 0,
+      }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
+      <div className="w-24 h-24 mx-auto mb-1 bg-blue-100 rounded-full flex items-center justify-center">
         <Image
           src={image}
           alt="Avatar"
@@ -21,7 +42,11 @@ const ProfileCard = ({
         />
       </div>
       <div className="mb-3 text-center">
-        <span className="text-black text-sm font-bold">{percentage}</span>
+        <span
+          className={`text-black text-sm font-bold ${color} px-4 py-1 rounded-full`}
+        >
+          {percentage}
+        </span>
       </div>
       <div className="space-y-1">
         <div className="flex justify-between text-sm">
@@ -41,7 +66,7 @@ const ProfileCard = ({
           <span className="font-medium">{hobbies}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
