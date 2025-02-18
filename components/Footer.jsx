@@ -1,6 +1,7 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { FaXTwitter, FaFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -14,10 +15,10 @@ const Footer = () => {
           height={100}
           className="w-20 h-20"
         />
-        <h2 className="mt-3 text-3xl font-semibold text-white">
-          Persona <span className="text-blue-400">AI*</span>
-        </h2>
-        <p className="text-gray-400">
+        <span className="text-3xl font-bold font-asap">
+          Persona <span className="text-sky-400">AI*</span>
+        </span>
+        <p className="text-gray-400 font-asap">
           Transform Market Research with AI-Driven Insights
         </p>
       </div>
@@ -25,13 +26,13 @@ const Footer = () => {
       {/* Social Icons */}
       <div className="flex justify-center gap-6 mt-6">
         <a href="#" className="hover:text-white transition">
-          <Twitter className="w-8 h-8" />
+          <FaXTwitter className="w-8 h-8" />
         </a>
         <a href="#" className="hover:text-white transition">
           <Instagram className="w-8 h-8" />
         </a>
         <a href="#" className="hover:text-white transition">
-          <Facebook className="w-8 h-8" />
+          <FaFacebook className="w-8 h-8" />
         </a>
       </div>
 
