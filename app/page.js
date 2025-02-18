@@ -368,13 +368,13 @@ const Home = () => {
       </section>
 
       {/* How it works Section */}
-      <section className="bg-heading text-white p-8 py-20 min-h-screen rounded-3xl relative">
+      <section className="bg-heading text-white px-16 py-20 min-h-screen rounded-3xl relative">
         {/* Header */}
         <div className="mb-12 text-center">
           <p className="text-blue-400 mb-2">Some Subtitle</p>
           <h2 className="text-5xl font-bold font-asap">How it works</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-12 relative">
           {/* Added relative for positioning */}
           {process.map((feature, index) => (
             <div
@@ -392,9 +392,7 @@ const Home = () => {
               <h3 className="font-semibold text-lg md:text-xl">
                 {feature.title}
               </h3>
-              <p className="text-sm md:text-base mx-auto max-w-xs text-left">
-                {feature.text}
-              </p>
+              <p className="text-sm md:text-base text-left">{feature.text}</p>
             </div>
           ))}
         </div>
