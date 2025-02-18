@@ -20,9 +20,9 @@ import { motion } from "framer-motion";
 
 const getPosition = (index) => {
   const positions = [
-    "top-60 left-2",
-    "top-1/2 right-10 transform -translate-y-1/2",
-    "bottom-32 left-48",
+    "top-60 -left-4",
+    "top-96 right-10 ",
+    "bottom-28 right-52",
   ];
   return positions[index];
 };
@@ -112,12 +112,12 @@ const Home = () => {
                 height={100}
                 className="w-12 h-12"
               />
-              <span className="text-2xl font-bold">
+              <span className="text-2xl font-bold font-asap">
                 Persona <span className="text-sky-400">AI*</span>
               </span>
             </div>
             <div className="hidden md:flex justify-end items-center gap-4">
-              <nav className="flex gap-8 text-white">
+              <nav className="flex gap-4 text-white">
                 <a href="#" className="hover:text-black">
                   Team
                 </a>
@@ -231,7 +231,7 @@ const Home = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-center md:text-left">
+            <h1 className="text-4xl font-asap md:text-6xl font-bold leading-tight text-center md:text-left">
               Transform Market <br />
               Research with <br />
               <span className="relative">
@@ -258,7 +258,7 @@ const Home = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="hidden md:flex gap-4 mt-16">
+            <div className="hidden md:flex gap-4 mt-72">
               <a href="#" className="text-gray-500 hover:text-gray-700">
                 <svg
                   className="w-6 h-6"
@@ -296,7 +296,7 @@ const Home = () => {
           <div className="relative w-1/2 hidden md:block">
             {/* Blue curved background */}
             <div className="absolute top-[-80px] right-0 w-full h-screen">
-              <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full border-l-[30px] border-sky-200">
+              <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full border-l-[60px] border-sky-200">
                 {avatars.map((avatar, index) => (
                   <motion.div
                     key={avatar.id}
@@ -325,10 +325,10 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-40 flex flex-col items-center">
+      <section className="py-20 md:py-10 md:pb-30 flex flex-col items-center">
         <div className="space-y-1 text-center">
           <span className="text-sky-400 font-medium">Features</span>
-          <h2 className="text-5xl font-bold text-heading">
+          <h2 className="text-5xl font-bold text-heading font-asap">
             <span className="relative">
               <span className="relative z-10">How</span>
               <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10"></span>
@@ -345,7 +345,7 @@ const Home = () => {
               key={index}
               className="space-y-4 text-center md:max-w-sm mx-auto"
             >
-              <div className="bg-blue-50 w-36 h-36 mx-auto rounded-2xl flex items-center justify-center">
+              <div className="w-36 h-36 mx-auto rounded-2xl flex items-center justify-center bg-[linear-gradient(45deg,rgba(104,197,255,0.24)_0%,rgba(25,231,231,0.24)_100%)]">
                 {showImages ? (
                   <Image
                     src={feature.images[imageIndexes[index]]}
@@ -355,6 +355,7 @@ const Home = () => {
                   />
                 ) : null}
               </div>
+
               <h3 className="font-semibold text-lg md:text-xl">
                 {feature.title}
               </h3>
@@ -367,11 +368,11 @@ const Home = () => {
       </section>
 
       {/* How it works Section */}
-      <section className="bg-heading text-white p-8 min-h-screen rounded-3xl relative">
+      <section className="bg-heading text-white p-8 py-20 min-h-screen rounded-3xl relative">
         {/* Header */}
         <div className="mb-12 text-center">
-          <p className="text-blue-400 mb-2">Some subtitle</p>
-          <h2 className="text-5xl font-bold">How it works</h2>
+          <p className="text-blue-400 mb-2">Some Subtitle</p>
+          <h2 className="text-5xl font-bold font-asap">How it works</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 relative">
           {/* Added relative for positioning */}
@@ -430,14 +431,16 @@ const Home = () => {
           <p className="text-sky-400 uppercase text-sm tracking-wide">
             TOKENOMICS
           </p>
-          <h2 className="text-5xl font-bold text-heading">
+          <h2 className="text-5xl font-bold text-heading font-asap">
             The
             <span className="relative">
-              <span className="relative z-10">$PRSNA</span>
+              <span className="relative z-10"> $PRSNA</span>
               <span className="absolute bottom-0 left-0 w-full rounded-full h-3 bg-yellow-300 -z-10"></span>
             </span>
           </h2>
-          <h2 className="text-5xl font-bold text-heading">Token Ecosystem</h2>
+          <h2 className="text-5xl font-bold text-heading font-asap">
+            Token Ecosystem
+          </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between w-full py-8 bg-white">
           <div className="text-center md:text-left order-2 md:order-1">
@@ -465,12 +468,14 @@ const Home = () => {
           <div className="flex justify-center order-1 md:order-2">
             <Chart />
           </div>
-          <div className="w-full md:w-1/3 text-left flex flex-col gap-6 px-2 order-3">
-            <p className="text-gray-600 leading-relaxed">
+          <div className="w-full md:w-1/3 text-left flex flex-col gap-6 order-3">
+            <p className="text-[#333333] leading-normal">
               PersonaAI acknowledges the importance of ensuring token holders
-              fully share in the platform’s success. PersonaAI’s tokenized
+              fully share in the platform's success. PersonaAI’s tokenized
               economy is designed to incentivize participation, foster
-              transparency, and ensure long-term growth.
+              transparency, and ensure the platform’s long-term growth. The
+              $PRSNA token lies at the core of our ecosystem, offering dynamic
+              utility and value for all stakeholders.
             </p>
             <div className="border-l-4 border-yellow-300">
               <p className="font-bold text-black mx-3">
@@ -488,17 +493,23 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="bg-heading text-white p-4 md:p-8 min-h-screen rounded-3xl relative">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <p className="text-blue-400 mb-2">Roadmap</p>
-          <h2 className="text-5xl font-bold">Our upcoming plans</h2>
+      <section className="bg-heading text-white p-4 md:pt-28 md:p-8 min-h-screen relative rounded-3xl ">
+        <div className="space-y-1 mb-12 text-center">
+          <span className="text-sky-400 font-medium">Roadmap</span>
+          <h2 className="text-5xl font-bold text-white font-asap">
+            <span className="relative">
+              <span className="">Our upcoming</span>
+            </span>
+            <span className="ml-2 relative">
+              <span className="relative z-10">Plans</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300"></span>
+            </span>
+          </h2>
         </div>
-
-        <div className="flex flex-col md:flex-row w-full space-x-6">
-          <div className="w-full md:w-1/2 px-2">
+        <div className="flex flex-col justify-center gap-10 items-center md:flex-row w-full space-x-6">
+          <div className="w-full md:w-1/3">
             {/* Foundation Card */}
-            <div className="bg-blue-400 rounded-3xl p-6 mb-8">
+            <div className="bg-[#57BEFF] rounded-3xl p-4 py-6 mb-8">
               <div className="flex justify-between items-center mb-4">
                 <span className="bg-white text-blue-400 px-4 py-1 rounded-full text-sm">
                   Phase 1
@@ -516,7 +527,7 @@ const Home = () => {
             {/* Phase 2 Card */}
             <div className="bg-white rounded-3xl p-6 mb-8">
               <div className="flex justify-between items-center mb-4">
-                <span className="bg-blue-400 text-white px-4 py-1 rounded-full text-sm">
+                <span className="bg-[#57BEFF] text-white px-4 py-1 rounded-full text-sm">
                   Phase 2
                 </span>
                 <span className="text-blue-900">Q2 2025</span>
@@ -529,7 +540,7 @@ const Home = () => {
             {/* Phase 3 Card */}
             <div className="bg-white rounded-3xl p-6 mb-8">
               <div className="flex justify-between items-center mb-4">
-                <span className="bg-blue-400 text-white px-4 py-1 rounded-full text-sm">
+                <span className="bg-[#57BEFF] text-white px-4 py-1 rounded-full text-sm">
                   Phase 3
                 </span>
                 <span className="text-blue-900">Q3 2025</span>
@@ -630,7 +641,7 @@ const Home = () => {
         {/* Title Section */}
         <div className="space-y-1 text-center mb-8">
           <span className="text-sky-400 font-medium">Use Cases</span>
-          <h2 className="text-5xl font-bold text-heading">
+          <h2 className="text-5xl font-bold text-heading font-asap">
             <span className="relative">
               <span className="relative z-10">Where</span>
               <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10"></span>
@@ -701,7 +712,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className=" w-full bg-blue-50 min-h-screen relative rounded-3xl">
+      <section className="w-full bg-blue-50 min-h-screen rounded-3xl relative pt-20">
         <Testimonial />
         <div className="w-full hidden md:flex justify-center items-center absolute left-0 bottom-[-100px]">
           <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 px-8 flex flex-wrap items-center gap-4">

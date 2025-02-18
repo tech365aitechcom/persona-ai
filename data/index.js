@@ -111,6 +111,14 @@ export const teamMembers = [
     imageUrl:
       "https://s3-alpha-sig.figma.com/img/b02a/1ad7/744b46c18196a0ff6d3a7130ecdb4b55?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kMfZls6Kuq6s1sZs72nq1ewYfaHBO1mdlXl4zMWeXkFy4eb83~z~w9DliqtSBopJjDG-KxmB7Qa-DXY6MF2zZVAnvJewXxOrVglHHSr5mtRl0T-09br4z9N8LyvOS1xq1Rf7OCjDsZN2jnC7kZGRws3OY-1VGIbqa4MZFAPJy3M5jT~w2t-B-naHTAo3rQSGZ4ak9nHxt8tHXEWrzmgdD6jIDaCxpNFncA0HiSu2uAgARgR03zPukKJ54mA86UssEHnGQDaz3TCAszBQOAQIkZoSBuOedB7OQeTLl5DIy9bOhVlS7OvZnvWc-VwqoBUsChEGIfOpMFkF3cTaWJKFHQ__",
   },
+  {
+    role: "Technology Partner",
+    name: "365 AI Tech",
+    imagePosition: "right",
+    bio: "365 AI Tech is a leading AI and automation agency with a strong background in creating advanced AI-driven systems tailored for high-impact projects. Their team brings broad skills across software development, enabling seamless integration of diverse technologies into a cohesive platform. Their expertise in automating complex workflows—from onboarding and content creation to project management and sales—directly aligns with PersonaAI’s mission to deliver seamless, efficient market research solutions. With their proven ability to integrate cutting-edge AI with practical applications, 365 AI Tech is critical to building our platform’s robust and dynamic capabilities, ensuring an exceptional user experience and operational efficiency.",
+    imageUrl: "/365aitech-logo.png",
+    localUrl: true,
+  },
 ];
 
 export const process = [
