@@ -398,7 +398,7 @@ const Home = () => {
         </div>
         {/* CTA Section */}
         <div className="relative mt-12 text-center space-y-6 z-40">
-          <h3 className="text-5xl font-bold">Join us CTA title</h3>
+          <h3 className="text-5xl font-bold font-asap">Join us CTA title</h3>
           <button className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors">
             Explore the Platform
             <ArrowRight className="w-5 h-5" />
@@ -466,7 +466,7 @@ const Home = () => {
           <div className="flex justify-center order-1 md:order-2">
             <Chart />
           </div>
-          <div className="w-full md:w-1/3 text-left flex flex-col gap-6 order-3">
+          <div className="w-full md:w-1/3 text-left px-2 lg:px-0 flex flex-col gap-6 order-3">
             <p className="text-[#333333] leading-normal">
               PersonaAI acknowledges the importance of ensuring token holders
               fully share in the platform's success. PersonaAI’s tokenized
@@ -604,7 +604,7 @@ const Home = () => {
 
         {/* CTA Section */}
         <div className="relative pt-16 text-center space-y-6 pb-28">
-          <h3 className="text-5xl font-bold">
+          <h3 className="text-5xl font-bold font-asap">
             Be the first to
             <span className="ml-2 relative">
               <span className="relative z-10">join</span>

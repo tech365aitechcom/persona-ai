@@ -5,7 +5,7 @@ import DecorativeShape from "./DecorativeShape";
 
 const Testimonial = () => {
   return (
-    <div className="relative min-h-screen bg-blue-50 pt-16 pb-44 px-2 md:px-6 rounded-full">
+    <div className="relative min-h-screen bg-blue-50 pt-16 pb-28 md:pb-44 px-2 md:px-6 rounded-full">
       <DecorativeShape className="hidden md:block-top-32 -left-20" />
       <DecorativeShape className="hidden md:block-bottom-28 -right-20 rotate-180" />
 
