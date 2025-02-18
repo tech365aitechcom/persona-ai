@@ -606,9 +606,9 @@ const Home = () => {
         <div className="relative pt-16 text-center space-y-6 pb-28">
           <h3 className="text-5xl font-bold">
             Be the first to
-            <span className="relative">
-              <span className="relative z-10"> join</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10"></span>
+            <span className="ml-2 relative">
+              <span className="relative z-10">join</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300"></span>
             </span>
             <br /> our platform
           </h3>
