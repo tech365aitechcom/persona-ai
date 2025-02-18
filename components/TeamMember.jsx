@@ -71,10 +71,10 @@ const TeamMember = ({
         </div>
         <div
           className={`absolute top-1/2 -translate-y-1/2 ${
-            imagePosition === "right" ? "-right-20" : "-left-20"
+            imagePosition === "right" ? "-right-32" : "-left-32"
           }`}
         >
-          <div className="w-72 h-72 rounded-full overflow-hidden flex justify-center items-center">
+          <div className="w-72 h-72 rounded-full bg-white overflow-hidden flex justify-center items-center">
             <img
               src={imageSrc}
               alt={name}

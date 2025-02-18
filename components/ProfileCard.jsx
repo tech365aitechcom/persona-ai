@@ -49,19 +49,19 @@ const ProfileCard = ({
         </span>
       </div>
       <div className="space-y-1">
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between">
           <span className="text-gray-600">Gender:</span>
           <span className="font-medium">{gender}</span>
         </div>
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between">
           <span className="text-gray-600">Age:</span>
           <span className="font-medium">{age}</span>
         </div>
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between">
           <span className="text-gray-600">Profession:</span>
           <span className="font-medium">{profession}</span>
         </div>
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between">
           <span className="text-gray-600">Hobbies:</span>
           <span className="font-medium">{hobbies}</span>
         </div>
