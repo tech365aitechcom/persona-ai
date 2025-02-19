@@ -19,11 +19,7 @@ import Testimonial from "@/components/Testimonial";
 import { motion } from "framer-motion";
 
 const getPosition = (index) => {
-  const positions = [
-    "top-60 -left-4",
-    "top-96 right-10 ",
-    "bottom-28 right-52",
-  ];
+  const positions = ["top-80 left-56", "top-44 right-20", "bottom-32 right-52"];
   return positions[index];
 };
 
@@ -99,7 +95,7 @@ const Home = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="w-full mx-auto">
       <section className="relative">
         {/* Header */}
         <>
@@ -116,8 +112,8 @@ const Home = () => {
                 Persona <span className="text-sky-400">AI*</span>
               </span>
             </div>
-            <div className="hidden md:flex justify-end items-center gap-4">
-              <nav className="flex gap-4 text-white">
+            <div className="hidden md:flex justify-end items-center gap-8 pr-8">
+              <nav className="flex gap-12 text-white">
                 <a href="#" className="hover:text-black">
                   Team
                 </a>
@@ -295,28 +291,34 @@ const Home = () => {
           {/* Right Content - Updated to match design */}
           <div className="relative w-1/2 hidden md:block">
             {/* Blue curved background */}
-            <div className="absolute top-[-80px] right-0 w-full h-screen">
-              <div className="relative w-full h-full bg-heading rounded-tl-full rounded-bl-full border-l-[60px] border-sky-200">
-                {avatars.map((avatar, index) => (
-                  <motion.div
-                    key={avatar.id}
-                    className={`absolute ${getPosition(index)}`}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{
-                      opacity: activeCard === index ? 1 : 1,
-                      scale: activeCard === index ? 0.9 : 1.1,
-                    }}
-                    transition={{ duration: 0.7, ease: "easeInOut" }}
-                  >
-                    {activeCard === index ? (
-                      <ProfileCard {...avatar} />
-                    ) : (
-                      <AvatarIcon image={avatar.image} />
-                    )}
-                  </motion.div>
-                ))}
-              </div>
+            <div className="absolute right-0">
+              <Image
+                src="/hero.png"
+                alt="PersonaAI Logo"
+                width={800}
+                height={800}
+                className=""
+              />
             </div>
+
+            {avatars.map((avatar, index) => (
+              <motion.div
+                key={avatar.id}
+                className={`absolute ${getPosition(index)}`}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 1,
+                  scale: activeCard === index ? 0.9 : 1.1,
+                }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+              >
+                {activeCard === index ? (
+                  <ProfileCard {...avatar} />
+                ) : (
+                  <AvatarIcon image={avatar.image} />
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
         <div className="w-full md:hidden">
@@ -325,7 +327,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-10 md:pb-30 flex flex-col items-center">
+      <section className="py-20 md:py-24 md:pb-30 flex flex-col items-center">
         <div className="space-y-1 text-center">
           <span className="text-sky-400 font-medium">Features</span>
           <h2 className="text-5xl font-bold text-heading font-asap">
@@ -339,7 +341,7 @@ const Home = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 px-4">
+        <div className="flex flex-wrap justify-between items-center w-full gap-8 py-12 px-4">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -356,10 +358,10 @@ const Home = () => {
                 ) : null}
               </div>
 
-              <h3 className="font-semibold text-lg md:text-xl">
+              <h3 className="font-semibold text-xl md:text-2xl">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-sm md:text-base mx-auto max-w-xs text-left">
+              <p className="text-gray-600 text-sm md:text-base mx-auto max-w-xs text-center">
                 {feature.text}
               </p>
             </div>
@@ -368,11 +370,11 @@ const Home = () => {
       </section>
 
       {/* How it works Section */}
-      <section className="bg-heading text-white px-16 py-20 min-h-screen rounded-3xl relative">
+      <section className="bg-heading text-white px-16 py-20 min-h-screen rounded-3xl relative lg:mx-20 md:mx-10 mx-4">
         {/* Header */}
         <div className="mb-12 text-center">
           <p className="text-blue-400 mb-2">Some Subtitle</p>
-          <h2 className="text-5xl font-bold font-asap">How it works</h2>
+          <h2 className="text-6xl font-bold font-asap">How it works</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-12 relative">
           {/* Added relative for positioning */}
@@ -424,7 +426,7 @@ const Home = () => {
       </section>
 
       {/* Tokenomics Section */}
-      <section className="max-w-7xl py-10 md:py-40 mx-auto">
+      <section className=" py-10 md:py-40 px-8 md:px-16">
         <div className="space-y-1 pb-6 text-center">
           <p className="text-sky-400 uppercase text-sm tracking-wide">
             TOKENOMICS
@@ -491,7 +493,7 @@ const Home = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="bg-heading text-white p-4 md:pt-28 md:p-8 min-h-screen relative rounded-3xl ">
+      <section className="bg-heading text-white p-4 md:pt-28 md:p-8 min-h-screen relative rounded-3xl lg:px-20 md:px-10 px-4">
         <div className="space-y-1 mb-12 text-center">
           <span className="text-sky-400 font-medium">Roadmap</span>
           <h2 className="text-5xl font-bold text-white font-asap">
@@ -504,8 +506,8 @@ const Home = () => {
             </span>
           </h2>
         </div>
-        <div className="flex flex-col justify-center gap-10 items-center md:flex-row w-full space-x-6">
-          <div className="w-full md:w-1/3">
+        <div className="flex flex-col justify-center gap-16 items-center md:flex-row w-full space-x-6">
+          <div className="w-full md:w-1/4">
             {/* Foundation Card */}
             <div className="bg-[#57BEFF] rounded-3xl p-4 py-6 mb-8">
               <div className="flex justify-between items-center mb-4">
@@ -621,8 +623,8 @@ const Home = () => {
           <Image
             src="/ellipse3.png"
             alt="Ellipse"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className="hidden md:block"
           />
           <Image
@@ -650,11 +652,11 @@ const Home = () => {
         </div>
         {/* Cards Container */}
         <div className="relative overflow-x-hidden">
-          <div className="flex gap-4 transition-all duration-300 ease-in-out">
+          <div className="flex gap-4 mx-4 transition-all duration-300 ease-in-out">
             {getVisibleCards().map((useCase, index) => (
               <div
                 key={index + currentSlide * slidesPerView}
-                className={`flex-none bg-[#e0f9fd] rounded-xl p-6 mx-4 md:mx-0 shadow-sm 
+                className={`flex-none bg-[#e0f9fd] rounded-xl p-6 shadow-sm 
                             ${
                               slidesPerView === 1
                                 ? "w-[calc(100%/1-28px)]"
@@ -675,7 +677,7 @@ const Home = () => {
           </div>
 
           {/* Navigation & Progress Bar */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center gap-4 m-8">
             <button
               onClick={handlePrevious}
               className="p-2 rounded-full border border-gray-200 hover:bg-sky-300 disabled:bg-sky-200 bg-sky-400 transition-colors"
@@ -710,7 +712,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full bg-blue-50 min-h-screen rounded-3xl relative pt-20">
+      <section className="w-full bg-[#57BEFF29] min-h-screen rounded-3xl relative pt-20">
         <Testimonial />
         <div className="w-full hidden md:flex justify-center items-center absolute left-0 bottom-[-100px]">
           <div className="w-full relative bg-heading rounded-3xl md:rounded-full pl-20 px-8 flex flex-wrap items-center gap-4">
