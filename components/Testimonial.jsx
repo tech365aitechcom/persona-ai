@@ -5,12 +5,12 @@ import DecorativeShape from "./DecorativeShape";
 
 const Testimonial = () => {
   return (
-    <div className="relative min-h-screen bg-blue-50 pt-16 pb-28 md:pb-44 px-2 md:px-6 rounded-full">
-      <DecorativeShape className="hidden md:block-top-32 -left-20" />
-      <DecorativeShape className="hidden md:block-bottom-28 -right-20 rotate-180" />
+    <div className="relative min-h-screen bg-[57BEFF29] pt-16 pb-28 md:pb-44 px-2 md:px-6 rounded-full">
+      <DecorativeShape className="hidden md:block -top-32 left-44" />
+      <DecorativeShape className="hidden md:block -bottom-32 right-44 rotate-180" />
 
       <div className="max-w-7xl mx-auto space-y-7">
-        <div className="space-y-1 text-center">
+        <div className="space-y-1 text-center pb-8">
           <span className="text-sky-400 font-medium">Some Subtitle</span>
           <h2 className="text-5xl font-bold text-heading font-asap">
             <span className="relative">

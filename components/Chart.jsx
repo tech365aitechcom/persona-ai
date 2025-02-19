@@ -13,7 +13,7 @@ const Chart = () => {
   if (!isClient) return null;
 
   return (
-    <PieChart width={380} height={450}>
+    <PieChart width={500} height={500}>
       <Pie
         data={chartData}
         cx="50%"
