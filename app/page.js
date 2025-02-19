@@ -19,7 +19,8 @@ import Testimonial from "@/components/Testimonial";
 import { motion } from "framer-motion";
 
 const getPosition = (index) => {
-  const positions = ["top-80 left-56", "top-44 right-20", "bottom-32 right-52"];
+  // const positions = ["top-80 left-56", "top-44 right-20", "bottom-32 right-52"];
+  const positions = ["top-64 left-12", "top-36 right-4", "bottom-32 right-52"];
   return positions[index];
 };
 
@@ -471,7 +472,7 @@ const Home = () => {
           <div className="w-full md:w-1/3 text-left px-2 lg:px-0 flex flex-col gap-6 order-3">
             <p className="text-[#333333] leading-normal">
               PersonaAI acknowledges the importance of ensuring token holders
-              fully share in the platform's success. PersonaAI’s tokenized
+              fully share in the platform&apos;s success. PersonaAI’s tokenized
               economy is designed to incentivize participation, foster
               transparency, and ensure the platform’s long-term growth. The
               $PRSNA token lies at the core of our ecosystem, offering dynamic
@@ -480,8 +481,9 @@ const Home = () => {
             <div className="border-l-4 border-yellow-300">
               <p className="font-bold text-black mx-3">
                 PersonaAI acknowledges the importance of ensuring token holders
-                fully share in the platform's success. We also know that token
-                price growth requires value to be represented in the token.
+                fully share in the platform&apos;s success. We also know that
+                token price growth requires value to be represented in the
+                token.
               </p>
             </div>
             <button className="w-fit mt-6 px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2">
