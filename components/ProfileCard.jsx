@@ -49,21 +49,21 @@ const ProfileCard = ({
         </span>
       </div>
       <div className="space-y-1">
-        <div className="flex justify-between">
+        <div className="flex justify-start gap-2">
           <span className="text-gray-600">Gender:</span>
-          <span className="font-medium">{gender}</span>
+          <span className="font-bold">{gender}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-start gap-2">
           <span className="text-gray-600">Age:</span>
-          <span className="font-medium">{age}</span>
+          <span className="font-bold">{age}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-start gap-2">
           <span className="text-gray-600">Profession:</span>
-          <span className="font-medium">{profession}</span>
+          <span className="font-bold">{profession}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-start gap-2">
           <span className="text-gray-600">Hobbies:</span>
-          <span className="font-medium">{hobbies}</span>
+          <span className="font-bold">{hobbies}</span>
         </div>
       </div>
     </motion.div>
