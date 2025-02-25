@@ -6,8 +6,8 @@ const DecorativeShape = ({ className }) => {
       <svg
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
-        width="550"
-        height="550"
+        width="400"
+        height="400"
       >
         <defs>
           <linearGradient id="myGradient" x1="0%" y1="0%" x2="0%" y2="100%">

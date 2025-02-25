@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ProcessOfWork = () => {
   return (
-    <div className="bg-heading text-white flex items-center flex-col rounded-3xl relative overflow-hidden py-16 mx-2 md:mx-12">
+    <div className="bg-heading text-white flex items-center flex-col radius relative overflow-hidden py-16 mx-2 md:mx-12">
       <div className="absolute right-0 top-0">
         <Image
           src="/Ellipse 3.png"

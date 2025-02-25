@@ -74,3 +74,7 @@ body {
 body {
   overflow-x: hidden;
 }
+
+.radius {
+  border-radius: 64px;
+}

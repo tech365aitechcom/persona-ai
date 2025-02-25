@@ -1,3 +1,5 @@
+"use client";
+
 import { featureData } from "@/data";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";

@@ -5,7 +5,7 @@ import { FaXTwitter, FaFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#333333] text-gray-300 pt-16 md:pt-36 pb-16 px-4 text-center">
+    <footer className="bg-[#333333] text-gray-300 pt-16 pb-16 px-4 text-center">
       {/* Logo & Branding */}
       <div className="flex flex-col gap-2 items-center">
         <Image
@@ -49,6 +49,12 @@ const Footer = () => {
         </a>
         <a href="#" className="hover:text-white transition">
           Explore the Platform
+        </a>
+        <a href="#" className="hover:text-white transition">
+          Start Research Now
+        </a>
+        <a href="#" className="hover:text-white transition">
+          Partner with Us
         </a>
       </nav>
 
