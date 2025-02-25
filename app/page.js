@@ -17,6 +17,7 @@ import AvatarIcon from "@/components/AvatarIcon";
 import ProfileCard from "@/components/ProfileCard";
 import Testimonial from "@/components/Testimonial";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const getPosition = (index) => {
   const positions = ["top-80 left-56", "top-44 right-20", "bottom-32 right-52"];
@@ -764,6 +765,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
