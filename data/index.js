@@ -217,7 +217,7 @@ export const process = [
   },
   {
     title: "AI-Generated Insights & Reports",
-    img: "/creation.png",
+    img: "/creation2.png",
     text: "PersonaAI analyzes sentiment shifts, decision drivers, and behavioral patterns.",
   },
   {
