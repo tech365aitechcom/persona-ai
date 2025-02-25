@@ -17,6 +17,9 @@ import AvatarIcon from "@/components/AvatarIcon";
 import ProfileCard from "@/components/ProfileCard";
 import Testimonial from "@/components/Testimonial";
 import { motion } from "framer-motion";
+import CustomAIPersonas from "@/components/CustomAIPersonas";
+import Features from "@/components/Features";
+import ProcessOfWork from "@/components/ProcessofWork";
 
 const getPosition = (index) => {
   const positions = ["top-80 left-56", "top-44 right-20", "bottom-32 right-52"];
@@ -328,105 +331,9 @@ const Home = () => {
           <ProfileCarousel data={userData} />
         </div>
       </section>
-
-      {/* Features Section */}
-      <section className="py-20 md:py-24 md:pb-30 flex flex-col items-center">
-        <div className="space-y-1 text-center">
-          <span className="text-sky-400 font-medium">Features</span>
-          <h2 className="text-5xl font-bold text-heading font-asap">
-            <span className="relative">
-              <span className="relative z-10">How</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10"></span>
-            </span>
-            <span className="ml-2 relative z-10">you can</span>
-          </h2>
-          <h2 className="text-5xl font-bold text-heading">use Persona AI</h2>
-        </div>
-
-        {/* Features Grid */}
-        <div className="flex flex-wrap justify-between items-center w-full gap-8 py-12 px-4">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="space-y-4 text-center md:max-w-sm mx-auto"
-            >
-              <div className="w-36 h-36 mx-auto rounded-2xl flex items-center justify-center bg-[linear-gradient(45deg,rgba(104,197,255,0.24)_0%,rgba(25,231,231,0.24)_100%)]">
-                {showImages ? (
-                  <Image
-                    src={feature.images[imageIndexes[index]]}
-                    width={90}
-                    height={90}
-                    alt={`Feature ${index + 1}`}
-                  />
-                ) : null}
-              </div>
-
-              <h3 className="font-semibold text-xl md:text-2xl">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 text-sm md:text-base mx-auto max-w-xs text-center">
-                {feature.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* How it works Section */}
-      <section className="bg-heading text-white px-16 py-20 min-h-screen rounded-3xl relative lg:mx-20 md:mx-10 mx-4">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <p className="text-blue-400 mb-2">Some Subtitle</p>
-          <h2 className="text-6xl font-bold font-asap">How it works</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-12 relative">
-          {/* Added relative for positioning */}
-          {process.map((feature, index) => (
-            <div
-              key={index}
-              className="space-y-4 text-center md:max-w-sm mx-auto relative"
-            >
-              <div className="w-full flex items-center">
-                <div className="bg-blue-50 w-36 h-36 mx-auto rounded-full flex items-center justify-center relative z-10">
-                  <div className="absolute top-2 left-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900 font-bold">
-                    {index + 1}
-                  </div>{" "}
-                  <Image src={feature.img} width={70} height={70} alt="icon" />
-                </div>
-              </div>
-              <h3 className="font-semibold text-lg md:text-xl">
-                {feature.title}
-              </h3>
-              <p className="text-sm md:text-base text-left">{feature.text}</p>
-            </div>
-          ))}
-        </div>
-        {/* CTA Section */}
-        <div className="relative mt-12 text-center space-y-6 z-40">
-          <h3 className="text-5xl font-bold font-asap">Join us CTA title</h3>
-          <button className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors">
-            Explore the Platform
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-        {/* Bottom Left Circle */}
-        <div className="absolute left-0 bottom-0">
-          <Image
-            src="/ellipse2.png"
-            alt="Ellipse"
-            width={400}
-            height={400}
-            className="hidden md:block"
-          />
-          <Image
-            src="/ellipse2.png"
-            alt="Ellipse"
-            width={250}
-            height={250}
-            className="md:hidden"
-          />
-        </div>
-      </section>
+      <CustomAIPersonas />
+      <Features />
+      <ProcessOfWork />
 
       {/* Tokenomics Section */}
       <section className=" py-10 md:py-40 px-8 md:px-16">
