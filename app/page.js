@@ -228,28 +228,31 @@ const Home = () => {
 
             {/* Heading */}
             <h1 className="text-4xl font-asap md:text-6xl font-bold leading-tight text-center md:text-left">
-              Transform Market <br />
-              Research with <br />
+              AI Powered <br />
+              Qualitative Research | <br />
               <span className="relative">
-                <span className="relative z-10">AI-Driven</span>
+                <span className="relative z-10 ">Simulated</span>
                 <span className="absolute bottom-1 left-0 w-full rounded-full h-4 bg-yellow-300 -z-10"></span>
               </span>
-              <span> Insights</span>
+              <span className="ml-4">
+                Behavioral <br /> Insights at Scale
+              </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-gray-600 text-lg mt-6 mb-8 max-w-xl px-4 md:px-0 text-center md:text-left">
-              Welcome to PersonaAI, where cutting-edge AI meets blockchain to
-              revolutionize market research.
+              Our AI-driven personas simulate consumer,investor,and user
+              behavior,allowing you to test ideas,optimize messaging,and predict
+              market trends -with depth ,speed,and accuracy.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-6">
               <button className="bg-yellow-300 hover:bg-yellow-500 text-black font-medium py-4 px-8 rounded-full flex items-center gap-2 text-sm md:text-base">
-                Explore the Platform <ArrowRight className="w-5 h-5" />
+                Start Your Research Today <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-2">
-                <FileText className="w-5 h-5" /> Download Litepaper
+              <button className="w-fit px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2">
+                Explore How PersonaAI Works
               </button>
             </div>
 
