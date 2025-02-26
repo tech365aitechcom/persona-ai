@@ -47,8 +47,8 @@ const TokenEcosystem = () => {
         <div className="flex justify-center order-1 md:order-2">
           <Chart />
         </div>
-        <div className="w-full md:w-1/3 text-left px-2 lg:px-0 flex flex-col gap-6 order-3">
-          <p className="text-[#333333] leading-normal">
+        <div className="w-full md:w-1/3 text-left px-12 lg:px-0 flex flex-col gap-6 order-3">
+          <p className="text-[#333333] leading-normal text-center">
             PersonaAI acknowledges the importance of ensuring token holders
             fully share in the platform&apos;s success. PersonaAI’s tokenized
             economy is designed to incentivize participation, foster
@@ -63,10 +63,12 @@ const TokenEcosystem = () => {
               token price growth requires value to be represented in the token.
             </p>
           </div>
-          <button className="w-fit mt-6 px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2">
-            <FileText className="text-sky-400" />
-            <span>Download Litepaper</span>
-          </button>
+          <div className="w-full flex justify-center md:justify-start">
+            <button className="w-fit mt-6 px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2">
+              <FileText className="text-sky-400" />
+              <span>Download Litepaper</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>

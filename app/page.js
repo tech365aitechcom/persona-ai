@@ -13,7 +13,7 @@ import Unique from "@/components/Unique";
 
 const Home = () => {
   return (
-    <div className="w-full m-auto flex flex-col items-center justify-center">
+    <div className="w-full m-auto flex flex-col items-center justify-center overflow-x-hidden">
       <Header />
       <CustomAIPersonas />
       <Unique />

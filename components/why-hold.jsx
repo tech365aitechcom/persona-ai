@@ -5,7 +5,7 @@ const WhyHold2 = () => {
   return (
     <section className="flex items-center justify-center py-10 md:py-32">
       <div className="max-w-7xl w-full">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <p className="text-[#57BEFF] uppercase text-base tracking-wide mb-8">
             TOKENOMICS
           </p>

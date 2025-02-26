@@ -5,7 +5,7 @@ import React from "react";
 
 const Roadmap = () => {
   return (
-    <section className="bg-heading text-white p-4 md:pt-28 md:p-8 min-h-screen relative radius lg:px-20 md:px-10 px-4">
+    <section className="bg-heading text-white p-4 md:pt-28 md:p-8 min-h-screen relative rounded-2xl md:radius lg:px-20 md:px-10 px-4">
       <div className="space-y-1 mb-12 text-center">
         <span className="text-sky-400 font-medium">Roadmap</span>
         <h2 className="text-5xl font-bold text-white font-asap">
