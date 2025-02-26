@@ -21,7 +21,7 @@ const WhyHold2 = () => {
         {/* Feature Points with Curved Connections */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Curved dotted connections */}
-          <div className="absolute w-full -top-4 left-48 right-0 hidden md:block z-10">
+          <div className="absolute w-full -top-2 left-44 right-0 hidden md:block z-10">
             <Image
               src="/Vector 1.png"
               alt="Curved dotted connections"

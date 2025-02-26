@@ -6,7 +6,7 @@ import Image from "next/image";
 const ProcessOfWork = () => {
   return (
     <div className="w-full">
-      <div className="bg-heading text-white flex items-center flex-col rounded-2xl md:radius relative overflow-hidden py-6 md:py-12 md:mx-12">
+      <div className="bg-heading text-white flex items-center flex-col radius relative overflow-hidden py-6 md:py-12 md:mx-12">
         {/* Subtitle and Title */}
         <div className="text-center mb-8">
           <p className="text-blue-300 text-sm mb-1">Some Subtitle</p>

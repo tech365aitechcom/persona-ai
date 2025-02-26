@@ -4,9 +4,9 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <section className="w-full">
+    <section className="w-full md:pb-12">
       <div className="flex justify-center items-center md:mx-8">
-        <div className="w-full bg-heading rounded-t-3xl flex justify-between items-center relative overflow-hidden py-8 px-4">
+        <div className="w-full bg-heading rounded-t-3xl md:rounded-3xl flex justify-between items-center relative overflow-hidden py-8 px-4">
           {/* Left circle - positioned absolutely to overlap with the edge */}
           <div className="hidden md:flex absolute left-24 top-0 bottom-0  items-center">
             <Image
@@ -14,7 +14,7 @@ const Subscribe = () => {
               alt="Decorative circle"
               width={200}
               height={400}
-              className="transform -translate-x-1/2"
+              className="transform h-full -translate-x-1/2"
             />
           </div>
           <div className="md:hidden absolute left-24 top-0 bottom-0  items-center">
@@ -30,7 +30,7 @@ const Subscribe = () => {
           <div className="flex justify-center items-center flex-col gap-6 z-10 mx-auto px-8">
             <h2 className="text-white font-bold text-lg md:text-2xl font-asap text-center">
               Join top crypto & Web2 businesses using PersonaAI to optimize
-              marketing, product adoption, and governance strategies.
+              marketing, product <br /> adoption, and governance strategies.
             </h2>
 
             <div className="text-center">
