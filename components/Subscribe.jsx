@@ -3,7 +3,7 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <section>
+    <section className="w-full">
       <div className="hidden md:flex justify-center items-center mx-8 pb-12">
         <div className="w-full h-56 bg-heading radius pl-4 flex justify-center items-center gap-4 relative">
           {/* <div className="">

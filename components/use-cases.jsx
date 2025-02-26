@@ -52,8 +52,8 @@ const UseCases = () => {
         <h2 className="text-5xl font-bold text-heading">use Persona AI</h2>
       </div>
       {/* Cards Container */}
-      <div className="relative overflow-x-hidden">
-        <div className="flex gap-4 mx-4 transition-all duration-300 ease-in-out">
+      <div className="relative overflow-x-hidden pl-4">
+        <div className="flex gap-4 transition-all duration-300 ease-in-out">
           {getVisibleCards().map((useCase, index) => (
             <div
               key={index + currentSlide * slidesPerView}

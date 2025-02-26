@@ -123,7 +123,7 @@ const Roadmap = () => {
           </span>
           <br /> our platform
         </h3>
-        <button className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors">
+        <button className="bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors">
           Explore the Platform
           <ArrowRight className="w-5 h-5" />
         </button>
@@ -134,7 +134,7 @@ const Roadmap = () => {
           alt="Ellipse"
           width={300}
           height={300}
-          className="hidden md:block"
+          className="hidden md:block bottom-right-radius"
         />
         <Image
           src="/ellipse3.png"

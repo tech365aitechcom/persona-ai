@@ -9,12 +9,14 @@ import Header from "@/components/Header";
 import TokenEcosystem from "@/components/Ecosystem";
 import Roadmap from "@/components/Roadmap";
 import Subscribe from "@/components/Subscribe";
+import Unique from "@/components/Unique";
 
 const Home = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full m-auto flex flex-col items-center justify-center">
       <Header />
       <CustomAIPersonas />
+      <Unique />
       <Features />
       <ProcessOfWork />
       <TokenEcosystem />

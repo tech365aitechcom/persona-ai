@@ -78,3 +78,7 @@ body {
 .radius {
   border-radius: 64px;
 }
+
+.bottom-right-radius {
+  border-bottom-right-radius: 64px;
+}

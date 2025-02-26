@@ -3,15 +3,15 @@ import React from "react";
 
 export default function CustomAIPersonas() {
   return (
-    <div className="py-52 w-full">
+    <div className="pt-36 pb-12 w-full">
       <div className="text-center py-36 px-12 bg-gradient-to-r from-[#68c5ff1a] to-[#19e7e71a] relative">
-        <div className="absolute left-72 top-1/2 -translate-y-1/2">
+        <div className="absolute left-20 top-1/2 -translate-y-1/2">
           <Image
             src="/image.png"
             alt="Ellipse"
             width={200}
             height={200}
-            className="opacity-15 -rotate-45 hidden md:block"
+            className="opacity-10 -rotate-12 hidden md:block"
           />
         </div>
         <div className="relative z-10">
@@ -27,7 +27,7 @@ export default function CustomAIPersonas() {
             audience—use them for <br /> market research, product testing, and
             strategic planning over and over again.
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-all">
+          <button className="w-fit px-6 py-4 bg-white mt-6 text-sky-400 rounded-full  space-x-2">
             Commission a Custom Persona
           </button>
         </div>
@@ -37,7 +37,7 @@ export default function CustomAIPersonas() {
             alt="Ellipse"
             width={400}
             height={350}
-            className="opacity-15 -rotate-12 hidden md:block"
+            className="opacity-10 -rotate-12 hidden md:block"
           />
         </div>
       </div>

@@ -10,7 +10,7 @@ import ProfileCard from "./ProfileCard";
 import AvatarIcon from "./AvatarIcon";
 
 const getPosition = (index) => {
-  const positions = ["top-64 left-12", "top-36 right-4", "bottom-32 right-52"];
+  const positions = ["top-64 left-12", "top-36 right-20", "bottom-32 right-52"];
   return positions[index];
 };
 
@@ -31,17 +31,26 @@ const Header = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  const [showPointer, setShowPointer] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowPointer((prev) => !prev);
+    }, 3000); // 1s animation + 2s hidden = 3s cycle
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative">
+    <section className="relative w-full">
       <>
         <header className="w-full absolute top-0 left-0 flex justify-between items-center px-6 py-4 z-50">
           <div className="flex items-center gap-2">
             <Image
-              src="https://s3-alpha-sig.figma.com/img/99c3/6664/8abfa4838cbe2d98d3c96c9caa0fa6ba?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=JM2I8gLE1ctra9Xl9cUqKzgxqE9yyycZvadvyKP0Ppn9vWzG7cWx6-GnzfjDCZEYc-9dpJb3JwJpU2X8-KNpJpqJZm~Tds7ehbnixGb0EpLWZ3zH~sA6jjRvcXSVNPWCy12hXyoUFZkcN71AQ-EUxwflYsKUVZWJWODqOErGvf409ycNN9f-QsRMG11LOMJRGsi1Q-sWLXzGMHjgW4u1Z6BlhOEm7FqCc4xQZm4aFnW2lL5yhna3E9onaXsnWXGPs2DmTMkS8sBECVjnS-WKF5FWFfodUGXg8H9zDuQun4vyMG-QqmEeMyGOYQ7LPjgTkgSBiSfjlpoS87QLiYr7Kg__"
+              src="/logo.png"
               alt="PersonaAI Logo"
-              width={100}
-              height={100}
-              className="w-12 h-12"
+              width={40}
+              height={40}
             />
             <span className="text-2xl font-bold font-asap">
               Persona <span className="text-sky-400">AI*</span>
@@ -232,13 +241,61 @@ const Header = () => {
           <div className="absolute right-0">
             <Image
               src="/hero.png"
-              alt="PersonaAI Logo"
+              alt=""
               width={800}
               height={800}
               className=""
             />
           </div>
+          <div className="absolute right-28 top-1/2 -translate-y-1/2">
+            <Image
+              src="/spin.png"
+              alt=""
+              width={500}
+              height={500}
+              className="animate-spin-slow"
+            />
+          </div>
+          <div className="absolute right-44 top-1/2 -translate-y-1/2">
+            <div className="relative flex justify-center items-center">
+              {/* Animated Pointer with Scaling Effect */}
+              {showPointer && (
+                <motion.div
+                  initial={{ scale: 2, opacity: 1 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute left-1/2 -translate-x-1/2 top-12 text-[#57BEFF]"
+                >
+                  <svg
+                    width="68px"
+                    height="68px"
+                    viewBox="0 0 36 36"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="SVGRepo_iconCarrier">
+                      <title>cursor-hand-line</title>
+                      <path
+                        fill="#57BEFF"
+                        stroke="#57BEFF"
+                        stroke-width="0"
+                        d="M30.74,15.19a13.66,13.66,0,0,0-6.87-3.83A26,26,0,0,0,18,10.58V5.28A3.4,3.4,0,0,0,14.5,2,3.4,3.4,0,0,0,11,5.28v10L9.4,13.7a3.77,3.77,0,0,0-5.28,0A3.67,3.67,0,0,0,3,16.33a3.6,3.6,0,0,0,1,2.56l4.66,5.52a11.53,11.53,0,0,0,1.43,4,10.12,10.12,0,0,0,2,2.54v1.92a1.07,1.07,0,0,0,1,1.08H27a1.07,1.07,0,0,0,1-1.08v-2.7a12.81,12.81,0,0,0,3-8.36v-6A1,1,0,0,0,30.74,15.19ZM29,21.86a10.72,10.72,0,0,1-2.6,7.26,1.11,1.11,0,0,0-.4.72V32H14.14V30.52a1,1,0,0,0-.44-.83,7.26,7.26,0,0,1-1.82-2.23,9.14,9.14,0,0,1-1.2-3.52,1,1,0,0,0-.23-.59L5.53,17.53a1.7,1.7,0,0,1,0-2.42,1.76,1.76,0,0,1,2.47,0l3,3v3.14l2-1V5.28A1.42,1.42,0,0,1,14.5,4,1.42,1.42,0,0,1,16,5.28v11.8l2,.43V12.59a24.27,24.27,0,0,1,2.51.18V18l1.6.35V13c.41.08.83.17,1.26.28a14.88,14.88,0,0,1,1.53.49v5.15l1.6.35V14.5A11.06,11.06,0,0,1,29,16.23Z"
+                      />
+                    </g>
+                  </svg>
+                </motion.div>
+              )}
 
+              {/* Button */}
+              <button className="bg-yellow-300 hover:bg-yellow-500 text-black font-medium py-4 px-8 rounded-full flex items-center gap-2 text-sm md:text-base">
+                Create AI-Generated Personas
+              </button>
+            </div>
+          </div>
           {avatars.map((avatar, index) => (
             <motion.div
               key={avatar.id}
