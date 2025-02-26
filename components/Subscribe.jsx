@@ -1,23 +1,28 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const Subscribe = () => {
   return (
     <section className="w-full">
       <div className="hidden md:flex justify-center items-center mx-8 pb-12">
-        <div className="w-full h-56 bg-heading radius pl-4 flex justify-center items-center gap-4 relative">
-          {/* <div className="">
+        <div className="w-full bg-heading rounded-xl flex justify-between items-center relative overflow-hidden py-8 px-4">
+          {/* Left circle - positioned absolutely to overlap with the edge */}
+          <div className="absolute left-24 top-0 bottom-0 flex items-center">
             <Image
               src="/Ellipse31.png"
-              alt="PersonaAI Logo"
+              alt="Decorative circle"
               width={200}
-              height={700}
+              height={400}
+              className="transform -translate-x-1/2"
             />
-          </div> */}
-          <div className="flex justify-center items-center flex-col gap-6">
-            <h2 className="text-white font-bold text-lg md:text-2xl flex-1 font-asap text-center">
+          </div>
+
+          {/* Center content */}
+          <div className="flex justify-center items-center flex-col gap-6 z-10 mx-auto px-8">
+            <h2 className="text-white font-bold text-lg md:text-2xl font-asap text-center">
               Join top crypto & Web2 businesses using PersonaAI to optimize
-              marketing, product <br /> adoption, and governance strategies.
+              marketing, product adoption, and governance strategies.
             </h2>
 
             <div className="text-center">
@@ -27,14 +32,17 @@ const Subscribe = () => {
               </button>
             </div>
           </div>
-          {/* <div className="">
+
+          {/* Right circle - positioned absolutely to overlap with the edge */}
+          <div className="absolute right-24 top-0 bottom-0 flex items-center">
             <Image
               src="/Ellipse 4.png"
-              alt="PersonaAI Logo"
+              alt="Decorative circle"
               width={200}
-              height={300}
+              height={400}
+              className="transform translate-x-1/2"
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
