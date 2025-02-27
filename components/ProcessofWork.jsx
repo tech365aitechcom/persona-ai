@@ -17,6 +17,15 @@ const ProcessOfWork = () => {
 
         {/* Desktop Layout - Horizontal with left-aligned text */}
         <div className="hidden md:flex md:flex-col md:px-12">
+          <div className="hidden md:block absolute right-0 top-0">
+            <Image
+              src="/Ellipse 3.png"
+              alt="Decorative circle"
+              width={200}
+              height={200}
+              className=""
+            />
+          </div>
           {process.map((step, index) => (
             <div key={`desktop-${index}`} className="mb-6">
               <div className="flex items-start">
