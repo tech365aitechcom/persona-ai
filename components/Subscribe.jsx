@@ -6,7 +6,7 @@ const Subscribe = () => {
   return (
     <section className="w-full md:pb-12">
       <div className="flex justify-center items-center md:mx-8">
-        <div className="w-full bg-heading rounded-t-3xl md:rounded-3xl flex justify-between items-center relative overflow-hidden py-8 px-4">
+        <div className="w-full bg-heading custom-radius flex justify-between items-center relative overflow-hidden py-8 px-4">
           {/* Left circle - positioned absolutely to overlap with the edge */}
           <div className="hidden md:flex absolute left-24 top-0 bottom-0  items-center">
             <Image

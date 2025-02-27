@@ -75,10 +75,26 @@ body {
   overflow-x: hidden;
 }
 
-.radius {
+.radius,
+.custom-radius {
   border-radius: 64px;
 }
 
 .bottom-right-radius {
   border-bottom-right-radius: 64px;
+}
+
+@media screen and (max-width: 768px) {
+  .radius {
+    border-radius: 20px;
+  }
+  .bottom-right-radius {
+    border-bottom-right-radius: 20px;
+  }
+  .custom-radius {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 }
