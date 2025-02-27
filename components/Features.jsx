@@ -32,10 +32,10 @@ const Features = () => {
             <span className='relative z-10'>How</span>
             <span className='absolute bottom-1 left-0 w-full h-3 rounded-full bg-yellow-300 -z-10'></span>
           </span>
-          <span className='ml-2'>you can</span>
+          <span className='ml-2'>Can You</span>
         </h2>
         <h2 className='text-2xl sm:text-3xl md:text-5xl font-bold text-blue-900'>
-          use Persona AI?
+          Use Persona AI?
         </h2>
       </div>
 

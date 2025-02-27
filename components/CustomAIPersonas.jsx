@@ -27,9 +27,9 @@ export default function CustomAIPersonas() {
           </h1>
           <p className='mt-4 text-[#222222] mx-auto text-lg md:text-2xl font-medium'>
             Your Users, Simulated. Get custom AI personas tailored to your
-            audience—use them for <br className='hidden md:block' />
-            market research, product testing, and strategic planning over and
-            over again.
+            audience <br />
+            —use them for market research, product testing, and strategic
+            planning repeatedly.
           </p>
           <button className='w-fit px-4 py-3 md:px-6 md:py-4 bg-white mt-6 text-sky-400 rounded-full space-x-2 text-sm md:text-base'>
             Commission a Custom Persona

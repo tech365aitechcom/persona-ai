@@ -172,23 +172,23 @@ const Header = () => {
           </div>
 
           {/* Heading */}
-          <h1 className='text-4xl font-asap md:text-6xl font-bold leading-tight text-center md:text-left'>
-            AI Powered <br />
-            Qualitative Research | <br />
+          <h1 className='text-4xl font-asap md:text-6xl leading-tight text-center md:text-left'>
+            AI-Powered <br />
+            Qualitative Research <br />
             <span className='relative'>
-              <span className='relative z-10 '>Simulated</span>
+              <span className='relative z-10 text-[50px]'>Simulated</span>
               <span className='absolute bottom-1 left-0 w-full rounded-full h-4 bg-yellow-300 -z-10'></span>
             </span>
-            <span className='ml-4'>
+            <span className='ml-4 text-[50px]'>
               Behavioral <br /> Insights at Scale
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className='text-gray-600 text-lg mt-6 mb-8 max-w-xl px-4 md:px-0 text-center md:text-left'>
-            Our AI-driven personas simulate consumer,investor,and user
-            behavior,allowing you to test ideas,optimize messaging,and predict
-            market trends -with depth ,speed,and accuracy.
+            Our AI-driven personas simulate consumer, investor, and user
+            behavior, allowing you to test ideas, optimize messaging, and
+            predict market trends—with depth, speed, and accuracy.
           </p>
 
           {/* CTA Buttons */}
@@ -196,7 +196,10 @@ const Header = () => {
             <button className='bg-yellow-300 text-black font-medium py-4 px-10 rounded-full flex items-center gap-2 text-sm md:text-base transition-all duration-300 ease-in-out group relative overflow-hidden group-hover:shadow-xl group-hover:scale-x-105'>
               Start Your Research Today{' '}
               <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
-              <span className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8'></span>
+              <span
+                className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8
+              '
+              ></span>
             </button>
             <button className='w-fit px-6 py-4 border border-sky-400 text-sky-400 rounded-full flex items-center justify-start space-x-2'>
               Explore How PersonaAI Works

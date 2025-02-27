@@ -166,26 +166,26 @@ export const chartData = [
 export const userData = [
   {
     percentage: '50%',
-    gender: 'Male',
-    age: '30-40 years',
-    profession: 'Lawyer',
-    hobbies: 'Reading, yoga',
+    gender: ' Male',
+    age: ' 30-40 years',
+    profession: ' Lawyer',
+    hobbies: ' Reading, yoga',
     icon: '/icon1.png',
   },
   {
     percentage: '65%',
-    gender: 'Female',
-    age: '25-35 years',
-    profession: 'Designer',
-    hobbies: 'Painting, hiking',
+    gender: ' Female',
+    age: ' 25-35 years',
+    profession: ' Designer',
+    hobbies: ' Painting, hiking',
     icon: '/icon2.png',
   },
   {
     percentage: '75%',
-    gender: 'Male',
-    age: '40-50 years',
-    profession: 'Engineer',
-    hobbies: 'Cycling, chess',
+    gender: ' Male',
+    age: ' 40-50 years',
+    profession: ' Engineer',
+    hobbies: ' Cycling, chess',
     icon: '/icon3.png',
   },
 ]
@@ -225,22 +225,22 @@ export const process = [
   {
     title: 'Define Your Research Goals',
     img: '/onboard.png',
-    text: 'Select research type (focus group, concept testing, sentiment analysis) and target audience.',
+    text: 'Select the type of research you need—focus group, concept testing, or sentiment analysis—and specify your target audience.',
   },
   {
     title: 'AI-Driven Persona Interviews',
     img: '/creation.png',
-    text: 'AI personas engage in discussions, answer questions, and simulate market behavior.',
+    text: 'Our AI personas engage in discussions, answer questions, and simulate market behaviors relevant to your study.',
   },
   {
     title: 'AI-Generated Insights & Reports',
     img: '/creation2.png',
-    text: 'PersonaAI analyzes sentiment shifts, decision drivers, and behavioral patterns.',
+    text: 'PersonaAI analyzes the interactions to provide insights into sentiment shifts, decision-making drivers, and behavioral patterns.',
   },
   {
     title: 'AI-Generated Insights & Reports',
     img: '/insights.png',
-    text: 'PersonaAI analyzes sentiment shifts, decision drivers, and behavioral patterns.',
+    text: 'PersonaAI analyzes the interactions to provide insights into sentiment shifts, decision-making drivers, and behavioral patterns.',
   },
 ]
 

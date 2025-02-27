@@ -28,7 +28,7 @@ const Unique = () => {
             {/* Traditional Market Research section */}
             <div className='text-center px-4 mb-2'>
               <h3 className='text-xl font-bold mb-2'>
-                Traditional Market Research- Most Market Data is Quantitative.
+                Traditional Market Research: Most Market Data is Quantitative.
               </h3>
               <p className='mb-4 text-sm'>
                 Traditional market research relies on numerical surveys, price
@@ -90,7 +90,7 @@ const Unique = () => {
               <div className='flex justify-center'>
                 <Image src='/web-site.png' height={40} width={40} alt='' />
               </div>
-              <h3 className='font-medium text-lg'>Why did it happened?</h3>
+              <h3 className='font-medium text-lg'>Why did it happen?</h3>
             </div>
 
             {/* CTA section */}
