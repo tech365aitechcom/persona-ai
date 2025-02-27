@@ -34,8 +34,8 @@ const Roadmap = () => {
             </div>
             <h3 className='text-xl font-bold mb-3'>Foundation</h3>
             <p className='text-white/90'>
-              Turpis cursus ut tristique accumsan lacus. Commodo nibh enim urna
-              vulputate et sed augue tortor. Odio at elementum lacus orci sed.
+              This is where all the planning and strategising for
+              PersonaAI happens
             </p>
           </div>
 
