@@ -23,7 +23,7 @@ const ProfileCard = ({
 
   return (
     <motion.div
-      className="w-64 h-auto bg-white rounded-xl p-4 shadow-lg"
+      className="w-64 h-auto bg-white rounded-xl p-4 shadow-lg z-50"
       initial={{ scale: 0, opacity: 0 }}
       animate={{
         scale: 1,

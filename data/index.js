@@ -37,22 +37,105 @@ export const features = [
   {
     title: "Market Validation",
     text: "Test product concepts through virtual focus groups with AI avatars representing target customers",
-    images: ["/icon11.png", "/icon12.png", "/icon13.png", "/icon14.png"],
+    images: "",
   },
   {
     title: "Roleplaying Scenarios",
     text: "Practice sales pitches, presentations, and negotiations in a risk-free environment",
-    images: ["/icon21.png", "/icon22.png", "/icon23.png", "/icon24.png"],
+    images: "/icon24.png",
   },
   {
     title: "Customer Insights",
     text: "Use PersonaAI to explore customer preferences, identifying trends and opportunities for product improvement",
-    images: ["/icon31.png", "/icon32.png", "/icon33.png", "/icon34.png"],
+    images: "/icon34.png",
   },
   {
     title: "Employee Training",
     text: "Leverage AI avatars for role-playing and training scenarios, enhancing team skills in customer service and sales",
-    images: ["/icon41.png", "/icon42.png", "/icon43.png", "/icon44.png"],
+    images: "/icon44.png",
+  },
+];
+
+export const featureData = [
+  {
+    id: 0,
+    title: "Traditional Market Research & Consumer Insights",
+    icon: "/icon14.png",
+    content: [
+      {
+        heading: "AI-Powered Focus Groups:",
+        text: "Scalable qualitative discussions to test product-market fit.",
+      },
+      {
+        heading: "Brand Messaging Optimization:",
+        text: "A/B test ad copy, pricing models, and branding with AI-driven feedback.",
+      },
+      {
+        heading: "Example:",
+        text: "Which messaging resonates better with Gen Z—'Sustainable Investing' or 'AI-Powered Portfolio Growth'?",
+      },
+    ],
+    buttonText: "Start Researching with AI",
+  },
+  {
+    id: 1,
+    title: "Ideation, Strategy, & Planning",
+    icon: "/icon24.png",
+    content: [
+      {
+        heading: "Strategic Workshops:",
+        text: "Conduct AI-facilitated ideation sessions with diverse perspectives.",
+      },
+      {
+        heading: "Product Roadmapping:",
+        text: "Map feature prioritization and development timelines with AI assistance.",
+      },
+      {
+        heading: "Example:",
+        text: "Help us create a 12-month product roadmap that balances customer needs with our technical capabilities.",
+      },
+    ],
+    buttonText: "Start Strategic Planning",
+  },
+  {
+    id: 2,
+    title: "Develop an AI persona once—use it for years.",
+    icon: "/icon34.png",
+    content: [
+      {
+        heading: "Custom Persona Development:",
+        text: "Create detailed customer avatars based on demographic and psychographic data.",
+      },
+      {
+        heading: "Evergreen Decision-Making:",
+        text: "Run product and marketing ideas by your AI personas before investing resources.",
+      },
+      {
+        heading: "Example:",
+        text: "How would our 'Early Adopter Tech Professional' persona respond to our new premium pricing tier?",
+      },
+    ],
+    buttonText: "Create AI Personas",
+  },
+  {
+    id: 3,
+    title: "AI & Web3 Token Research; Community & Ecosystem Growth",
+    icon: "/icon44.png",
+    content: [
+      {
+        heading: "Token Economics Analysis:",
+        text: "Evaluate tokenomics models and predict community adoption patterns.",
+      },
+      {
+        heading: "Community Engagement Strategies:",
+        text: "Develop tailored approaches for different segments of your Web3 community.",
+      },
+      {
+        heading: "Example:",
+        text: "What incentive mechanisms would best encourage long-term holding in our governance token?",
+      },
+    ],
+    buttonText: "Explore Web3 Research",
   },
 ];
 
@@ -123,19 +206,24 @@ export const teamMembers = [
 
 export const process = [
   {
-    title: "Onboarding",
+    title: "Define Your Research Goals",
     img: "/onboard.png",
-    text: "Metus neque donec vulputate ac id vel nisl. Mus auctor et sit pharetra urna. Consequat ut commodo pretium nunc in nibh lacinia purus. Tristique et mattis nisl amet cursus scelerisque.",
+    text: "Select research type (focus group, concept testing, sentiment analysis) and target audience.",
   },
   {
-    title: "Avatar Creation",
+    title: "AI-Driven Persona Interviews",
     img: "/creation.png",
-    text: "Aliquam dignissim dignissim nisl aliquam. Urna feugiat cras eget magna congue nunc viverra. Fringilla facilisis etiam elit dictum eget eu etiam et parturient. Ac sit faucibus lorem tellus sed.",
+    text: "AI personas engage in discussions, answer questions, and simulate market behavior.",
   },
   {
-    title: "Insights delivery",
+    title: "AI-Generated Insights & Reports",
+    img: "/creation2.png",
+    text: "PersonaAI analyzes sentiment shifts, decision drivers, and behavioral patterns.",
+  },
+  {
+    title: "AI-Generated Insights & Reports",
     img: "/insights.png",
-    text: "Lectus lobortis diam at pellentesque urna sed. Viverra in nec nulla orci blandit cursus maecenas nam. Orci amet augue egestas nunc enim. Parturient amet nunc ipsum interdum mi.",
+    text: "PersonaAI analyzes sentiment shifts, decision drivers, and behavioral patterns.",
   },
 ];
 

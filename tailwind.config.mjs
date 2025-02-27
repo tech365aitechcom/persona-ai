@@ -64,6 +64,9 @@ export default {
         asap: "var(--font-asap)",
         inter: "var(--font-inter)",
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite", // Slows down the spin to 5 seconds per rotation
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
