@@ -23,11 +23,11 @@ const getPosition = (index) => {
   return positions[index]
 }
 
-const Hero = () => {
+const Hero = ({ onClose }) => {
   const [activeCard, setActiveCard] = useState(0)
-
   const [showPointer, setShowPointer] = useState(true)
   const [showTooltip, setShowTooltip] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,29 +44,6 @@ const Hero = () => {
 
     return () => clearInterval(interval)
   }, [])
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contact: '',
-    query: '',
-  })
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Here you would typically send the data to your server
-    alert('Form submitted successfully!')
-    setFormData({ name: '', email: '', contact: '', query: '' })
-  }
 
   return (
     <section className='relative w-full'>
@@ -102,7 +79,7 @@ const Hero = () => {
             predict market trends—with depth, speed, and accuracy.
           </p>
           {/* CTA Buttons */}
-          <Dialog>
+          <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger className='bg-yellow-300 text-black font-medium py-4 px-10 rounded-full flex items-center gap-2 text-sm md:text-base transition-all duration-300 ease-in-out group relative overflow-hidden group-hover:shadow-xl group-hover:scale-x-105'>
               Start Your Research Today{' '}
               <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
@@ -113,7 +90,7 @@ const Hero = () => {
             </DialogTrigger>
             <DialogContent>
               <DialogTitle>Contact Us</DialogTitle>
-              <QueryForm />
+              <QueryForm onClose={() => setOpen(false)} />
             </DialogContent>
           </Dialog>
           {/* Social Icons */}

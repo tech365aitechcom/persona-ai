@@ -4,8 +4,9 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { toast } from 'sonner'
 
-const QueryForm = () => {
+const QueryForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,7 +25,6 @@ const QueryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    // Here you would typically send the data to your server
     try {
       const response = await fetch('/api/query', {
         method: 'POST',
@@ -35,8 +35,9 @@ const QueryForm = () => {
       if (response.ok) {
         const data = await response.json()
         console.log('Success:', data)
-        alert('Form submitted successfully!')
+        toast.success('Query submitted successfully!')
         setFormData({ name: '', email: '', contact: '', query: '' })
+        onClose()
       } else {
         console.error('Submission failed')
       }

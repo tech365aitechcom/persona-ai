@@ -1,7 +1,12 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog'
+import QueryForm from './QueryForm'
 
 export default function CustomAIPersonas() {
+  const [open, setOpen] = useState(false)
+
   return (
     <div className='pt-20 md:pt-32 w-full'>
       <div className='text-center py-24 md:py-36 px-4 md:px-12 bg-gradient-to-r from-[#68c5ff1a] to-[#19e7e71a] relative overflow-hidden'>
@@ -31,9 +36,16 @@ export default function CustomAIPersonas() {
             use them for market research, product testing, and strategic
             planning repeatedly.
           </p>
-          <button className='w-fit px-4 py-3 md:px-6 md:py-4 bg-white mt-6 text-sky-400 rounded-full space-x-2 text-sm md:text-base'>
-            Commission a Custom Persona
-          </button>
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger className='w-fit px-4 py-3 md:px-6 md:py-4 bg-white mt-6 text-sky-400 rounded-full space-x-2 text-sm md:text-base'>
+              Commission a Custom Persona
+            </DialogTrigger>
+            <DialogContent>
+              <DialogTitle>Contact Us</DialogTitle>
+              <QueryForm onClose={() => setOpen(false)} />
+            </DialogContent>
+          </Dialog>
+          {/* Social Icons */}
         </div>
 
         {/* Right blur ellipse - repositioned for mobile */}
