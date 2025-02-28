@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
 
 const ProfileCard = ({
   image,
@@ -11,63 +11,63 @@ const ProfileCard = ({
   hobbies,
   color,
 }) => {
-  const [faceUp, setFaceUp] = useState(false);
+  const [faceUp, setFaceUp] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFaceUp(true);
-    }, 10000); // Tilt after 10s
+      setFaceUp(true)
+    }, 10000) // Tilt after 10s
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <motion.div
-      className="w-64 h-auto bg-white rounded-xl p-4 shadow-lg"
+      className='w-64 h-auto bg-white rounded-xl p-4 shadow-lg '
       initial={{ scale: 0, opacity: 0 }}
       animate={{
         scale: 1,
         opacity: 1,
         rotateX: faceUp ? 10 : 0,
       }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 1, ease: 'easeOut' }}
     >
-      <div className="w-24 h-24 mx-auto mb-1 bg-blue-100 rounded-full flex items-center justify-center">
+      <div className='w-24 h-24 mx-auto mb-1 bg-blue-100 rounded-full flex items-center justify-center'>
         <Image
           src={image}
-          alt="Avatar"
+          alt='Avatar'
           width={50}
           height={50}
-          className="w-16 h-16 object-cover"
+          className='w-16 h-16 object-cover'
         />
       </div>
-      <div className="mb-3 text-center">
+      <div className='mb-3 text-center'>
         <span
           className={`text-black text-sm font-bold ${color} px-4 py-1 rounded-full`}
         >
           {percentage}
         </span>
       </div>
-      <div className="space-y-1">
-        <div className="flex justify-between">
-          <span className="text-gray-600">Gender:</span>
-          <span className="font-medium">{gender}</span>
+      <div className='space-y-1'>
+        <div className='flex justify-start gap-2'>
+          <span className='text-gray-600'>Gender:</span>
+          <span className='font-bold'>{gender}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Age:</span>
-          <span className="font-medium">{age}</span>
+        <div className='flex justify-start gap-2'>
+          <span className='text-gray-600'>Age:</span>
+          <span className='font-bold'>{age}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Profession:</span>
-          <span className="font-medium">{profession}</span>
+        <div className='flex justify-start gap-2'>
+          <span className='text-gray-600'>Profession:</span>
+          <span className='font-bold'>{profession}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Hobbies:</span>
-          <span className="font-medium">{hobbies}</span>
+        <div className='flex justify-start gap-2'>
+          <span className='text-gray-600'>Hobbies:</span>
+          <span className='font-bold'>{hobbies}</span>
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default ProfileCard;
+export default ProfileCard
