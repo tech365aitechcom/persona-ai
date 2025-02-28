@@ -11,7 +11,7 @@ const QueryForm = ({ onClose }) => {
     name: '',
     email: '',
     contact: '',
-    query: '',
+    useCase: '',
   })
 
   const handleChange = (e) => {
@@ -26,7 +26,7 @@ const QueryForm = ({ onClose }) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
     try {
-      const response = await fetch('/api/query', {
+      const response = await fetch('/api/useCase', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -35,8 +35,8 @@ const QueryForm = ({ onClose }) => {
       if (response.ok) {
         const data = await response.json()
         console.log('Success:', data)
-        toast.success('Query submitted successfully!')
-        setFormData({ name: '', email: '', contact: '', query: '' })
+        toast.success('Use Case submitted successfully!')
+        setFormData({ name: '', email: '', contact: '', useCase: '' })
         onClose()
       } else {
         console.error('Submission failed')
@@ -88,11 +88,11 @@ const QueryForm = ({ onClose }) => {
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='query'>Write Your Use Case</Label>
+            <Label htmlFor='useCase'>Write Your Use Case</Label>
             <Textarea
-              id='query'
-              name='query'
-              value={formData.query}
+              id='useCase'
+              name='useCase'
+              value={formData.useCase}
               onChange={handleChange}
               placeholder='What would you like to know?'
               rows={4}
