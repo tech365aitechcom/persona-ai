@@ -46,10 +46,6 @@ const Subscribe = () => {
                 >
                   Start Your AI-Powered Market Research Today
                   <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
-                  <span
-                    className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8
-              '
-                  ></span>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogTitle>Contact Us</DialogTitle>
