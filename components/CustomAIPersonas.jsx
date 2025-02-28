@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function CustomAIPersonas() {
   return (
-    <div className='pt-20 md:pt-52 w-full'>
+    <div className='pt-20 md:pt-32 w-full'>
       <div className='text-center py-24 md:py-36 px-4 md:px-12 bg-gradient-to-r from-[#68c5ff1a] to-[#19e7e71a] relative overflow-hidden'>
         {/* Left blur ellipse - repositioned for mobile */}
         <div className='absolute -left-10 md:left-20 top-1/4 md:top-1/2 md:-translate-y-1/2'>

@@ -54,10 +54,12 @@ const Hero = () => {
               Qualitative Research <br />
             </span>
             <span className='relative'>
-              <span className='relative z-10 text-[50px]'>Simulated</span>
+              <span className='relative z-10 text-3xl md:text-[50px]'>
+                Simulated
+              </span>
               <span className='absolute bottom-1 left-0 w-full rounded-full h-4 bg-yellow-300 -z-10'></span>
             </span>
-            <span className='ml-4 text-[50px]'>
+            <span className='ml-4 text-3xl md:text-[50px]'>
               Behavioral <br /> Insights at Scale
             </span>
           </h1>

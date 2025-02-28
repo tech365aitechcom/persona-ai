@@ -1,6 +1,7 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const Subscribe = () => {
   return (
@@ -46,7 +47,7 @@ const Subscribe = () => {
             </h2>
 
             <div className='text-center'>
-              <button
+              {/* <button
                 className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto 
                                        transition-all duration-300 ease-in-out group relative overflow-hidden shadow-md hover:shadow-yellow-100
                                        group-hover:shadow-xl group-hover:scale-x-105'
@@ -54,7 +55,14 @@ const Subscribe = () => {
                 Start Your AI-Powered Market Research Today
                 <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
                 <span className='absolute inset-y-0 right-0 w-0 bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-6'></span>
-              </button>
+              </button> */}
+              <a
+                href='https://x.com/PersonaAI_agent'
+                target='_blank'
+                className='hover:text-gray-500 transition'
+              >
+                <FaXTwitter className='w-8 h-8 text-white' />
+              </a>
             </div>
           </div>
 
