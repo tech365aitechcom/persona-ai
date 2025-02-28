@@ -27,7 +27,17 @@ export default function SurveyForm() {
   const [result, setResult] = useState(null)
 
   // Define restricted countries
-  const restrictedCountries = ['CHN', 'PRK']
+  const restrictedCountries = [
+    'CHN',
+    'PRK',
+    'DZA',
+    'EGY',
+    'MAR',
+    'NPL',
+    'BGD',
+    'BOL',
+    'ECU',
+  ]
 
   const countries = [
     // Crypto-friendly, high-income countries
@@ -38,15 +48,46 @@ export default function SurveyForm() {
     { name: 'France', value: 'FRA', priority: 'high' },
     { name: 'Singapore', value: 'SGP', priority: 'high' },
     { name: 'United Arab Emirates', value: 'ARE', priority: 'high' },
+    { name: 'Switzerland', value: 'CHE', priority: 'high' },
+    { name: 'Australia', value: 'AUS', priority: 'high' },
+    { name: 'Japan', value: 'JPN', priority: 'high' },
+    { name: 'South Korea', value: 'KOR', priority: 'high' },
+    { name: 'Netherlands', value: 'NLD', priority: 'high' },
+    { name: 'Malta', value: 'MLT', priority: 'high' },
+    { name: 'Estonia', value: 'EST', priority: 'high' },
+    { name: 'Portugal', value: 'PRT', priority: 'high' },
+    { name: 'Denmark', value: 'DNK', priority: 'high' },
+    { name: 'Sweden', value: 'SWE', priority: 'high' },
+    { name: 'Norway', value: 'NOR', priority: 'high' },
+    { name: 'Luxembourg', value: 'LUX', priority: 'high' },
+
     // Emerging Markets with High Crypto Adoption
     { name: 'Brazil', value: 'BRA', priority: 'high' },
     { name: 'India', value: 'IND', priority: 'high' },
     { name: 'Thailand', value: 'THA', priority: 'high' },
     { name: 'Nigeria', value: 'NGA', priority: 'high' },
     { name: 'Turkey', value: 'TUR', priority: 'high' },
+    { name: 'Vietnam', value: 'VNM', priority: 'high' },
+    { name: 'Philippines', value: 'PHL', priority: 'high' },
+    { name: 'Indonesia', value: 'IDN', priority: 'high' },
+    { name: 'Argentina', value: 'ARG', priority: 'high' },
+    { name: 'Mexico', value: 'MEX', priority: 'high' },
+    { name: 'South Africa', value: 'ZAF', priority: 'high' },
+    { name: 'Kenya', value: 'KEN', priority: 'high' },
+    { name: 'Colombia', value: 'COL', priority: 'high' },
+    { name: 'Ukraine', value: 'UKR', priority: 'high' },
+
     // Countries with restrictions or low adoption
     { name: 'China', value: 'CHN', priority: 'low' },
     { name: 'North Korea', value: 'PRK', priority: 'low' },
+    { name: 'Algeria', value: 'DZA', priority: 'low' },
+    { name: 'Egypt', value: 'EGY', priority: 'low' },
+    { name: 'Morocco', value: 'MAR', priority: 'low' },
+    { name: 'Nepal', value: 'NPL', priority: 'low' },
+    { name: 'Bangladesh', value: 'BGD', priority: 'low' },
+    { name: 'Bolivia', value: 'BOL', priority: 'low' },
+    { name: 'Ecuador', value: 'ECU', priority: 'low' },
+
     // Other countries
     { name: 'Other', value: 'OTHER', priority: 'medium' },
   ]
@@ -84,9 +125,7 @@ export default function SurveyForm() {
     },
   })
 
-  function onSubmit(values) {
-    console.log(values)
-
+  async function onSubmit(values) {
     // Qualification logic based on all criteria
     const isQualified =
       values.age !== 'Under 18' &&
@@ -101,22 +140,40 @@ export default function SurveyForm() {
       values.investmentPhilosophy !==
         'I invest conservatively and avoid volatility'
 
-    // Add priority logic if needed
-    const highPriority =
-      (values.age === '18-24' ||
-        values.age === '25-34' ||
-        values.age === '35-44') &&
-      (values.cryptoExperience === '2-5 years' ||
-        values.cryptoExperience === 'More than 5 years') &&
-      values.cryptoAssets.some((asset) =>
-        ['Bitcoin (BTC)', 'Ethereum (ETH)', 'AI-related tokens'].includes(asset)
-      ) &&
-      values.aiTokens === 'Yes, I actively invest in AI tokens' &&
-      (values.investmentPhilosophy ===
-        'I take high risks for high potential rewards' ||
-        values.investmentPhilosophy === 'I prefer balanced risks and safe bets')
+    // // Add priority logic if needed
+    // const highPriority =
+    //   (values.age === '18-24' ||
+    //     values.age === '25-34' ||
+    //     values.age === '35-44') &&
+    //   (values.cryptoExperience === '2-5 years' ||
+    //     values.cryptoExperience === 'More than 5 years') &&
+    //   values.cryptoAssets.some((asset) =>
+    //     ['Bitcoin (BTC)', 'Ethereum (ETH)', 'AI-related tokens'].includes(asset)
+    //   ) &&
+    //   values.aiTokens === 'Yes, I actively invest in AI tokens' &&
+    //   (values.investmentPhilosophy ===
+    //     'I take high risks for high potential rewards' ||
+    //     values.investmentPhilosophy === 'I prefer balanced risks and safe bets')
 
-    setResult(isQualified ? 'qualified' : 'disqualified')
+    try {
+      const payload = { ...values, isQualified }
+      const response = await fetch('/api/survey', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        console.log('Success:', data)
+
+        setResult(isQualified ? 'qualified' : 'disqualified')
+      } else {
+        console.error('Submission failed')
+      }
+    } catch (error) {
+      console.log('Error submitting form:', error)
+    }
   }
 
   if (result) {
