@@ -5,7 +5,7 @@ import TeamMember from './TeamMember'
 
 const OurTeam = () => {
   return (
-    <div className='relative min-h-screen mt-20 pt-16 py-28 md:pb-44 px-2 md:px-6 bg-[#57BEFF29]'>
+    <div className='relative min-h-screen mt-20 md:mb-12 pt-16 py-28 md:pb-44 px-2 md:px-6 bg-[#57BEFF29]'>
       <DecorativeShape className='hidden md:block -top-6 left-60' />
       <DecorativeShape className='hidden md:block -bottom-7 right-60 rotate-180' />
 
@@ -29,6 +29,8 @@ const OurTeam = () => {
               role={item.role}
               name={item.name}
               bio={item.bio}
+              xLink={item.xLink}
+              linkedinLink={item.linkedinLink}
               currentWork={item.currentWork}
               imageSrc={item.imageUrl}
               imagePosition={item.imagePosition}

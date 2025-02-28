@@ -199,6 +199,8 @@ export const teamMembers = [
     currentWork:
       'Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.',
     imageUrl: '/scott.png',
+    xLink: 'https://x.com/ScottSparkwave',
+    linkedinLink: 'https://www.linkedin.com/in/scott-johnson-1b76535/',
   },
   {
     role: 'Chief Research Strategist',
@@ -208,6 +210,7 @@ export const teamMembers = [
     currentWork:
       'Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.',
     imageUrl: '/william.png',
+    linkedinLink: 'https://www.linkedin.com/in/michaelynwilliams/',
   },
   {
     role: 'Technology Partner',
@@ -216,6 +219,8 @@ export const teamMembers = [
     bio: '365 AI Tech is a leading AI and automation agency with a strong background in creating advanced AI-driven systems tailored for high-impact projects. Their team brings broad skills across software development, enabling seamless integration of diverse technologies into a cohesive platform. Their expertise in automating complex workflows—from onboarding and content creation to project management and sales—directly aligns with PersonaAI’s mission to deliver seamless, efficient market research solutions. With their proven ability to integrate cutting-edge AI with practical applications, 365 AI Tech is critical to building our platform’s robust and dynamic capabilities, ensuring an exceptional user experience and operational efficiency.',
     imageUrl: '/aitechlogo.png',
     localUrl: true,
+    xLink: 'https://x.com/Satvind11052809',
+    linkedinLink: 'https://www.linkedin.com/company/365aitech/',
   },
 ]
 

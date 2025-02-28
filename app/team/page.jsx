@@ -7,7 +7,7 @@ const TeamPage = () => {
   return (
     <div className='relative pb-8 md:pb-32'>
       <OurTeam />
-      <TestimonialCarousel />
+      {/* <TestimonialCarousel /> */}
       <Subscribe />
     </div>
   )

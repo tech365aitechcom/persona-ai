@@ -7,11 +7,15 @@ const TeamMember = ({
   role,
   name,
   bio,
+  xLink,
+  linkedinLink,
   currentWork,
   imageSrc,
   imagePosition = 'right',
   localUrl = false,
 }) => {
+  console.log(xLink)
+
   return (
     <div className='relative bg-white rounded-[2rem] shadow-lg mb-12 max-w-4xl mx-auto min-h-[420px]'>
       <div className='md:hidden p-4'>
@@ -32,8 +36,16 @@ const TeamMember = ({
                 </h2>
               </div>
               <div className='flex gap-4'>
-                <Linkedin className='text-blue-900 cursor-pointer' />
-                <FaXTwitter className='text-blue-900 cursor-pointer w-6 h-6' />
+                {linkedinLink && (
+                  <a href={linkedinLink} target='_blank'>
+                    <Linkedin className='text-blue-900 cursor-pointer' />
+                  </a>
+                )}
+                {xLink && (
+                  <a href={xLink} target='_blank'>
+                    <FaXTwitter className='text-blue-900 cursor-pointer w-6 h-6' />
+                  </a>
+                )}
               </div>
             </div>
             <p className='text-gray-700 leading-relaxed mb-6'>{bio}</p>
@@ -62,8 +74,16 @@ const TeamMember = ({
                 </h2>
               </div>
               <div className='flex gap-4'>
-                <Linkedin className='text-blue-900 cursor-pointer' />
-                <FaXTwitter className='text-blue-900 cursor-pointer w-6 h-6' />
+                {linkedinLink && (
+                  <a href={linkedinLink} target='_blank'>
+                    <Linkedin className='text-blue-900 cursor-pointer' />
+                  </a>
+                )}
+                {xLink && (
+                  <a href={xLink} target='_blank'>
+                    <FaXTwitter className='text-blue-900 cursor-pointer w-6 h-6' />
+                  </a>
+                )}
               </div>
             </div>
             <p className='text-gray-700 leading-relaxed mb-6'>{bio}</p>

@@ -82,7 +82,7 @@ const Hero = () => {
             </button>
           </div>
           {/* Social Icons */}
-          <div className='hidden md:flex gap-4 mt-72'>
+          <div className='hidden md:flex gap-4 mt-12'>
             <a
               href='https://x.com/PersonaAI_agent'
               className='text-gray-500 hover:text-gray-700'
