@@ -85,7 +85,6 @@ const QueryForm = ({ onClose }) => {
               onChange={handleChange}
               placeholder='Enter your phone number'
             />
-            <p className='text-sm text-gray-500'>Optional</p>
           </div>
 
           <div className='space-y-2'>
