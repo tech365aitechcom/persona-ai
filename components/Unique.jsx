@@ -94,7 +94,7 @@ const Unique = () => {
             </div>
 
             {/* CTA section */}
-            <div className='text-center mt-6 pb-8 z-10'>
+            {/* <div className='text-center mt-6 pb-8 z-10'>
               <h2 className='text-xl font-bold mb-6 font-asap px-2'>
                 Want access to exclusive AI-driven consumer sentiment research?
               </h2>
@@ -102,7 +102,7 @@ const Unique = () => {
                 Request a Demo
                 <ArrowRight className='w-5 h-5' />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -218,7 +218,7 @@ const Unique = () => {
               <div className='absolute bottom-4 right-4 md:right-8 bg-blue-200 flex flex-col justify-center gap-2 w-44 md:w-52 h-44 md:h-52 bg-opacity-30 p-4 rounded-2xl backdrop-blur-sm'>
                 <Image src='/web-site.png' height={40} width={40} alt='' />
                 <h3 className='font-medium mb-1 text-white text-base md:text-lg'>
-                  Why did it happened?
+                  Why did it happen?
                 </h3>
               </div>
             </div>
