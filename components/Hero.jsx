@@ -54,10 +54,12 @@ const Hero = () => {
               Qualitative Research <br />
             </span>
             <span className='relative'>
-              <span className='relative z-10 text-[50px]'>Simulated</span>
+              <span className='relative z-10 text-3xl md:text-[50px]'>
+                Simulated
+              </span>
               <span className='absolute bottom-1 left-0 w-full rounded-full h-4 bg-yellow-300 -z-10'></span>
             </span>
-            <span className='ml-4 text-[50px]'>
+            <span className='ml-4 text-3xl md:text-[50px]'>
               Behavioral <br /> Insights at Scale
             </span>
           </h1>
@@ -82,7 +84,7 @@ const Hero = () => {
             </button>
           </div>
           {/* Social Icons */}
-          <div className='hidden md:flex gap-4 mt-12'>
+          <div className='hidden md:flex gap-4 mt-72'>
             <a
               href='https://x.com/PersonaAI_agent'
               className='text-gray-500 hover:text-gray-700'
