@@ -5,7 +5,7 @@ import React from 'react'
 
 const Roadmap = () => {
   return (
-    <section className='bg-heading text-white px-4 py-12 md:py-28 relative w-full flex flex-col items-center radius'>
+    <section className='bg-heading text-white px-4 py-12 mb-12 md:py-28 relative w-full flex flex-col items-center radius'>
       {/* Heading */}
       <div className='text-center space-y-2 mb-12'>
         <span className='text-sky-400 font-medium'>Roadmap</span>
@@ -118,7 +118,7 @@ const Roadmap = () => {
       </div>
 
       {/* CTA Section */}
-      <div className='pt-16 text-center space-y-6 pb-20'>
+      {/* <div className='pt-16 text-center space-y-6 pb-20'>
         <h3 className='text-4xl md:text-5xl font-bold font-asap'>
           Be the first to
           <span className='ml-2 relative'>
@@ -136,7 +136,7 @@ const Roadmap = () => {
           <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
           <span className='absolute inset-y-0 right-0 w-0 bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-6'></span>
         </button>
-      </div>
+      </div> */}
 
       {/* Background Decorations */}
       <div className='absolute right-0 bottom-0'>

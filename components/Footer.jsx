@@ -19,15 +19,19 @@ const Footer = () => {
 
       {/* Social Icons */}
       <div className='flex justify-center gap-6 my-10'>
-        <a href='#' className='hover:text-white transition'>
+        <a
+          href='https://x.com/PersonaAI_agent'
+          target='_blank'
+          className='hover:text-white transition'
+        >
           <FaXTwitter className='w-8 h-8' />
         </a>
-        <a href='#' className='hover:text-white transition'>
+        {/* <a href='#' className='hover:text-white transition'>
           <Instagram className='w-8 h-8' />
         </a>
         <a href='#' className='hover:text-white transition'>
           <FaFacebook className='w-8 h-8' />
-        </a>
+        </a> */}
       </div>
 
       {/* Navigation Links */}
@@ -35,29 +39,29 @@ const Footer = () => {
         <a href='#' className='hover:text-white transition'>
           Team
         </a>
-        <a href='#' className='hover:text-white transition'>
+        {/* <a href='#' className='hover:text-white transition'>
           Blog
-        </a>
+        </a> */}
         <a href='#' className='hover:text-white transition'>
           Litepaper
         </a>
-        <a href='#' className='hover:text-white transition'>
+        {/* <a href='#' className='hover:text-white transition'>
           Explore the Platform
-        </a>
-        <a href='#' className='hover:text-white transition'>
+        </a> */}
+        {/* <a href='#' className='hover:text-white transition'>
           Start Research Now
-        </a>
-        <a href='#' className='hover:text-white transition'>
+        </a> */}
+        {/* <a href='#' className='hover:text-white transition'>
           Partner with Us
-        </a>
+        </a> */}
       </nav>
 
       {/* Privacy Policy */}
-      <div className='mt-8 text-gray-400'>
+      {/* <div className='mt-8 text-gray-400'>
         <a href='#' className='hover:text-white transition'>
           Privacy Policy
         </a>
-      </div>
+      </div> */}
     </footer>
   )
 }

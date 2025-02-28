@@ -198,8 +198,7 @@ export const teamMembers = [
     bio: 'Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.',
     currentWork:
       'Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.',
-    imageUrl:
-      'https://s3-alpha-sig.figma.com/img/79bc/d302/3b9a46356ffffc8fb28cd301a0549290?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=U~Q5vDUvQHS7lFXO8pssGkxV6NK8Qg7rUuEFsoBuHu5JUKSjxpxK3ojUWqh3efwA1yZs4Q8MH9iFh4GiZwjMtuI2soBuZE6oXMRWYTEe1v4vJNpjYdN~a-X3Y77F2f96z4wwVieQPTQ-F6onvsNnDnbWD4rh2dsGvVmeyX49IxB9kj6czeISBtm6hZOUh87DaFbf~ucr6POCWkiR34GIr7Vq1iCIWn3JY~ehEr8B50KeP6uxHus2kcS8OanmoRa3hnUIrZ8MicLYyAiAfSFIdq0Iv8SLGNa9MQVOPRwp7uvNVcwQHvj1MXt3Aq9XW4WYejtJGGNyBwOPe4SeyxlxYg__',
+    imageUrl: '/scott.png',
   },
   {
     role: 'Chief Research Strategist',
@@ -208,16 +207,74 @@ export const teamMembers = [
     bio: 'Scott Johnson brings extensive leadership experience to PersonaAI, with a background in educational product development, market research, business development, and managing large organizations. He has served an executive in several education businesses, including eight years as CEO of Interactive Composition Corporation, operating in Portland, Oregon, and New Delhi, India.',
     currentWork:
       'Currently, Scott owns SparkWave AI, where he helps businesses integrate AI solutions, and Fight Flow Academy, a martial arts and personal development center in Raleigh, NC. At PersonaAI, he combines his expertise to create innovative tools that revolutionize market research through AI and blockchain.',
-    imageUrl:
-      'https://s3-alpha-sig.figma.com/img/b02a/1ad7/744b46c18196a0ff6d3a7130ecdb4b55?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kMfZls6Kuq6s1sZs72nq1ewYfaHBO1mdlXl4zMWeXkFy4eb83~z~w9DliqtSBopJjDG-KxmB7Qa-DXY6MF2zZVAnvJewXxOrVglHHSr5mtRl0T-09br4z9N8LyvOS1xq1Rf7OCjDsZN2jnC7kZGRws3OY-1VGIbqa4MZFAPJy3M5jT~w2t-B-naHTAo3rQSGZ4ak9nHxt8tHXEWrzmgdD6jIDaCxpNFncA0HiSu2uAgARgR03zPukKJ54mA86UssEHnGQDaz3TCAszBQOAQIkZoSBuOedB7OQeTLl5DIy9bOhVlS7OvZnvWc-VwqoBUsChEGIfOpMFkF3cTaWJKFHQ__',
+    imageUrl: '/william.png',
   },
   {
     role: 'Technology Partner',
     name: '365 AI Tech',
     imagePosition: 'right',
     bio: '365 AI Tech is a leading AI and automation agency with a strong background in creating advanced AI-driven systems tailored for high-impact projects. Their team brings broad skills across software development, enabling seamless integration of diverse technologies into a cohesive platform. Their expertise in automating complex workflows—from onboarding and content creation to project management and sales—directly aligns with PersonaAI’s mission to deliver seamless, efficient market research solutions. With their proven ability to integrate cutting-edge AI with practical applications, 365 AI Tech is critical to building our platform’s robust and dynamic capabilities, ensuring an exceptional user experience and operational efficiency.',
-    imageUrl: '/365aitech-logo.png',
+    imageUrl: '/aitechlogo.png',
     localUrl: true,
+  },
+]
+
+export const testimonials = [
+  {
+    id: 1,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Emily R.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Sarah L.',
+    rating: 5,
+  },
+  {
+    id: 3,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'David M.',
+    rating: 5,
+  },
+  {
+    id: 4,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Michael P.',
+    rating: 5,
+  },
+  {
+    id: 5,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Emily R.',
+    rating: 5,
+  },
+  {
+    id: 6,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Sarah L.',
+    rating: 5,
+  },
+  {
+    id: 7,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'David M.',
+    rating: 5,
+  },
+  {
+    id: 8,
+    quote:
+      'As a startup, we needed a digital marketing partner that could understand our unique needs and deliver cost-effective solutions.',
+    author: 'Michael P.',
+    rating: 5,
   },
 ]
 

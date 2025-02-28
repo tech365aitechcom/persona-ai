@@ -93,7 +93,7 @@ const ProcessOfWork = () => {
         </div>
 
         {/* CTA Button */}
-        <div className='text-center mt-8'>
+        {/* <div className='text-center mt-8'>
           <button
             className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto 
               transition-all duration-300 ease-in-out group relative overflow-hidden shadow-md hover:shadow-yellow-100
@@ -103,7 +103,7 @@ const ProcessOfWork = () => {
             <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
             <span className='absolute inset-y-0 right-0 w-0 bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-6'></span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
