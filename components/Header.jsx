@@ -1,30 +1,30 @@
-"use client";
-import { ArrowRight, Menu, X } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
+'use client'
+import { ArrowRight, Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
 
 const Header = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
+    setIsDrawerOpen(!isDrawerOpen)
+  }
 
   return (
     <>
-      <header className="w-full absolute top-0 left-0 flex justify-between items-center px-6 py-4 z-50">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="PersonaAI Logo" width={40} height={40} />
-          <span className="text-2xl font-bold font-asap">
-            Persona <span className="text-sky-400">AI*</span>
+      <header className='w-full absolute top-0 left-0 flex justify-between items-center px-6 py-4 z-50'>
+        <Link href='/' className='flex items-center gap-2'>
+          <Image src='/logo.png' alt='PersonaAI Logo' width={40} height={40} />
+          <span className='text-2xl font-bold font-asap'>
+            Persona <span className='text-sky-400'>AI*</span>
           </span>
         </Link>
-        <div className="hidden md:flex justify-end items-center gap-8 pr-8">
-          <nav className="flex gap-12 text-white">
+        <div className='hidden md:flex justify-end items-center gap-8 pr-8'>
+          <nav className='flex gap-12 text-white'>
             <a
-              href="/team"
-              className="bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors"
+              href='/team'
+              className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors'
             >
               Team
             </a>
@@ -32,8 +32,9 @@ const Header = () => {
                 Blog
               </a> */}
             <a
-              href="#"
-              className="bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors"
+              href='https://docs.google.com/document/d/e/2PACX-1vS_jluumIkJsVv7AITpTOix00Y7Uz_4mQqhblhaAo055ZRaC5slC3gvw9EqhOVrFOtf6_Dm76j2bx5p/pub'
+              target='_blank'
+              className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-yellow-300 transition-colors'
             >
               Litepaper
             </a>
@@ -42,41 +43,41 @@ const Header = () => {
               Explore the Platform
             </button> */}
         </div>
-        <div className="md:hidden">
-          <Menu className="cursor-pointer" onClick={toggleDrawer} />
+        <div className='md:hidden'>
+          <Menu className='cursor-pointer' onClick={toggleDrawer} />
         </div>
       </header>
 
       {/* Mobile Drawer */}
       <div
         className={`fixed top-0 right-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-          isDrawerOpen ? "translate-x-0" : "translate-x-full"
+          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-4">
-          <div className="flex justify-between">
-            <div className="flex items-center gap-2">
+        <div className='p-4'>
+          <div className='flex justify-between'>
+            <div className='flex items-center gap-2'>
               <Image
-                src="https://s3-alpha-sig.figma.com/img/99c3/6664/8abfa4838cbe2d98d3c96c9caa0fa6ba?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=JM2I8gLE1ctra9Xl9cUqKzgxqE9yyycZvadvyKP0Ppn9vWzG7cWx6-GnzfjDCZEYc-9dpJb3JwJpU2X8-KNpJpqJZm~Tds7ehbnixGb0EpLWZ3zH~sA6jjRvcXSVNPWCy12hXyoUFZkcN71AQ-EUxwflYsKUVZWJWODqOErGvf409ycNN9f-QsRMG11LOMJRGsi1Q-sWLXzGMHjgW4u1Z6BlhOEm7FqCc4xQZm4aFnW2lL5yhna3E9onaXsnWXGPs2DmTMkS8sBECVjnS-WKF5FWFfodUGXg8H9zDuQun4vyMG-QqmEeMyGOYQ7LPjgTkgSBiSfjlpoS87QLiYr7Kg__"
-                alt="PersonaAI Logo"
+                src='https://s3-alpha-sig.figma.com/img/99c3/6664/8abfa4838cbe2d98d3c96c9caa0fa6ba?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=JM2I8gLE1ctra9Xl9cUqKzgxqE9yyycZvadvyKP0Ppn9vWzG7cWx6-GnzfjDCZEYc-9dpJb3JwJpU2X8-KNpJpqJZm~Tds7ehbnixGb0EpLWZ3zH~sA6jjRvcXSVNPWCy12hXyoUFZkcN71AQ-EUxwflYsKUVZWJWODqOErGvf409ycNN9f-QsRMG11LOMJRGsi1Q-sWLXzGMHjgW4u1Z6BlhOEm7FqCc4xQZm4aFnW2lL5yhna3E9onaXsnWXGPs2DmTMkS8sBECVjnS-WKF5FWFfodUGXg8H9zDuQun4vyMG-QqmEeMyGOYQ7LPjgTkgSBiSfjlpoS87QLiYr7Kg__'
+                alt='PersonaAI Logo'
                 width={100}
                 height={100}
-                className="w-12 h-12"
+                className='w-12 h-12'
               />
-              <span className="text-2xl font-bold">
-                Persona <span className="text-sky-400">AI*</span>
+              <span className='text-2xl font-bold'>
+                Persona <span className='text-sky-400'>AI*</span>
               </span>
-            </div>{" "}
-            <X className="cursor-pointer" onClick={toggleDrawer} />
+            </div>{' '}
+            <X className='cursor-pointer' onClick={toggleDrawer} />
           </div>
-          <nav className="flex flex-col justify-center items-center text-lg gap-6 mt-32">
-            <a href="/team" className="text-black hover:text-sky-400">
+          <nav className='flex flex-col justify-center items-center text-lg gap-6 mt-32'>
+            <a href='/team' className='text-black hover:text-sky-400'>
               Team
             </a>
             {/* <a href='#' className='text-black hover:text-sky-400'>
               Blog
             </a> */}
-            <a href="#" className="text-black hover:text-sky-400">
+            <a href='#' className='text-black hover:text-sky-400'>
               Litepaper
             </a>
             {/* <button className='bg-yellow-300 hover:bg-yellow-500 text-black font-medium py-2 px-6 rounded-full mt-4 flex items-center gap-2'>
@@ -86,18 +87,18 @@ const Header = () => {
           </nav>
 
           {/* Social Icons */}
-          <div className="w-full flex justify-center md:hidden gap-4 mt-16">
+          <div className='w-full flex justify-center md:hidden gap-4 mt-16'>
             <a
-              href="https://x.com/PersonaAI_agent"
-              className="text-gray-500 hover:text-gray-700"
+              href='https://x.com/PersonaAI_agent'
+              className='text-gray-500 hover:text-gray-700'
             >
               <svg
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+                className='w-6 h-6'
+                fill='currentColor'
+                viewBox='0 0 24 24'
+                aria-hidden='true'
               >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' />
               </svg>
             </a>
             {/* <a href='#' className='text-gray-500 hover:text-gray-700'>
@@ -127,12 +128,12 @@ const Header = () => {
       {/* Overlay */}
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className='fixed inset-0 bg-black bg-opacity-50 z-40'
           onClick={toggleDrawer}
         />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

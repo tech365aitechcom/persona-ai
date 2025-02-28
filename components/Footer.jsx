@@ -36,13 +36,17 @@ const Footer = () => {
 
       {/* Navigation Links */}
       <nav className='flex flex-wrap justify-center gap-8 mt-6 text-lg'>
-        <a href='#' className='hover:text-white transition'>
+        <a href='/team' className='hover:text-white transition'>
           Team
         </a>
         {/* <a href='#' className='hover:text-white transition'>
           Blog
         </a> */}
-        <a href='#' className='hover:text-white transition'>
+        <a
+          href='https://docs.google.com/document/d/e/2PACX-1vS_jluumIkJsVv7AITpTOix00Y7Uz_4mQqhblhaAo055ZRaC5slC3gvw9EqhOVrFOtf6_Dm76j2bx5p/pub'
+          target='_blank'
+          className='hover:text-white transition'
+        >
           Litepaper
         </a>
         {/* <a href='#' className='hover:text-white transition'>
