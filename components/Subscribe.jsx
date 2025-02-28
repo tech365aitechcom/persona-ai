@@ -1,8 +1,12 @@
+'use client'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog'
+import QueryForm from './QueryForm'
 
 const Subscribe = () => {
+  const [open, setOpen] = useState(false)
   return (
     <section className='w-full md:pb-12'>
       <div className='flex justify-center items-center md:mx-8'>
@@ -34,15 +38,24 @@ const Subscribe = () => {
             </h2>
 
             <div className='text-center'>
-              <button
-                className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto 
+              <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger
+                  className='bg-yellow-400 text-[#333333] px-6 py-3 rounded-full font-medium flex items-center gap-2 mx-auto 
                                        transition-all duration-300 ease-in-out group relative overflow-hidden shadow-md hover:shadow-yellow-100
                                        group-hover:shadow-xl group-hover:scale-x-105'
-              >
-                Start Your AI-Powered Market Research Today
-                <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
-                <span className='absolute inset-y-0 right-0 w-0 bg-yellow-400 transition-all duration-300 ease-in-out group-hover:w-6'></span>
-              </button>
+                >
+                  Start Your AI-Powered Market Research Today
+                  <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
+                  <span
+                    className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8
+              '
+                  ></span>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogTitle>Contact Us</DialogTitle>
+                  <QueryForm onClose={() => setOpen(false)} />
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
 
