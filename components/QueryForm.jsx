@@ -88,7 +88,7 @@ const QueryForm = ({ onClose }) => {
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='query'>Your Query</Label>
+            <Label htmlFor='query'>Write Your Use Case</Label>
             <Textarea
               id='query'
               name='query'
@@ -104,7 +104,7 @@ const QueryForm = ({ onClose }) => {
             type='submit'
             className='w-full bg-yellow-300 text-black hover:bg-yellow-400'
           >
-            Submit Query
+            Submit
             <ArrowRight className='ml-2 h-4 w-4' />
           </Button>
         </form>
