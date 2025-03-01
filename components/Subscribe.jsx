@@ -33,7 +33,7 @@ const Subscribe = () => {
           {/* Center content */}
           <div className="flex justify-center items-center flex-col gap-6 z-10 mx-auto px-8">
             <h2 className="text-white font-bold text-lg md:text-2xl font-asap text-center">
-              Try PersonaAI to optimize marketing, <br /> product adoption and
+              Try PersonaAI to optimize marketing, product adoption and
               governance strategies.
             </h2>
 
