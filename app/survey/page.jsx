@@ -22,9 +22,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Loader2 } from 'lucide-react'
+import { toast } from 'sonner'
 
 export default function SurveyForm() {
   const [result, setResult] = useState(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Define restricted countries
   const restrictedCountries = [
@@ -126,6 +129,7 @@ export default function SurveyForm() {
   })
 
   async function onSubmit(values) {
+    setIsSubmitting(true)
     // Qualification logic based on all criteria
     const isQualified =
       values.age !== 'Under 18' &&
@@ -166,13 +170,15 @@ export default function SurveyForm() {
       if (response.ok) {
         const data = await response.json()
         console.log('Success:', data)
-
+        toast.success('Your response submitted successfully!')
         setResult(isQualified ? 'qualified' : 'disqualified')
       } else {
         console.error('Submission failed')
       }
     } catch (error) {
       console.log('Error submitting form:', error)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -584,7 +590,16 @@ export default function SurveyForm() {
           </Card>
 
           <CardFooter className='flex justify-end'>
-            <Button type='submit'>Submit</Button>
+            <Button type='submit'>
+              {isSubmitting ? (
+                <>
+                  <p>Submitting</p>
+                  <Loader2 className='animate-spin' />
+                </>
+              ) : (
+                'Submit'
+              )}
+            </Button>
           </CardFooter>
         </form>
       </Form>

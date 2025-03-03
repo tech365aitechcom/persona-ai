@@ -44,10 +44,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${asap.variable} ${inter.variable} ${figtree.variable} font-inter antialiased`}
       >
-        <Header />
         {children}
         <Toaster richColors />
-        <Footer />
       </body>
     </html>
   )
