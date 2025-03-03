@@ -21,7 +21,7 @@ const Home = () => {
       <ProcessOfWork />
       <TokenEcosystem />
       <WhyHold />
-      <ResearchImpact />
+      {/* <ResearchImpact /> */}
       {/* <Roadmap /> */}
       {/* <UseCases /> */}
       <Subscribe />

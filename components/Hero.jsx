@@ -79,20 +79,22 @@ const Hero = ({ onClose }) => {
             predict market trends—with depth, speed, and accuracy.
           </p>
           {/* CTA Buttons */}
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger className='bg-yellow-300 text-black font-medium py-4 px-10 rounded-full flex items-center gap-2 text-sm md:text-base transition-all duration-300 ease-in-out group relative overflow-hidden group-hover:shadow-xl group-hover:scale-x-105'>
-              Start Your Research Today{' '}
-              <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
-              <span
-                className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8
+          <div className='w-full flex justify-center md:justify-start'>
+            <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger className='bg-yellow-300 text-black font-medium py-4 px-10 rounded-full flex items-center gap-2 text-sm md:text-base transition-all duration-300 ease-in-out group relative overflow-hidden group-hover:shadow-xl group-hover:scale-x-105'>
+                Start Your Research Today{' '}
+                <ArrowRight className='w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1' />
+                <span
+                  className='absolute inset-y-0 right-0 w-0 bg-yellow-300 transition-all duration-300 ease-in-out group-hover:w-8
               '
-              ></span>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogTitle>Contact Us</DialogTitle>
-              <QueryForm onClose={() => setOpen(false)} />
-            </DialogContent>
-          </Dialog>
+                ></span>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogTitle>Contact Us</DialogTitle>
+                <QueryForm onClose={() => setOpen(false)} />
+              </DialogContent>
+            </Dialog>
+          </div>
           {/* Social Icons */}
           <div className='hidden md:flex gap-4 mt-72'>
             {/* <a

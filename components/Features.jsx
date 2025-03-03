@@ -86,11 +86,11 @@ const Features = () => {
                 </div>
 
                 {/* Button */}
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <button className="w-full px-6 py-2 border border-sky-400 text-sky-400 rounded-full flex items-center justify-center text-sm">
                     {feature.buttonText || "Start Researching with AI"}
                   </button>
-                </div>
+                </div> */}
               </div>
             )}
           </div>
